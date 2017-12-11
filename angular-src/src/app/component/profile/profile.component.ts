@@ -25,7 +25,7 @@ export class ProfileComponent implements OnInit {
                 private flashMessage: FlashMessagesService) {
         this.getProjects();
         this.getStrategies();
-        //this.createDummyProgress();
+        this.createDummyProgress();
     }
 
     ngOnInit() {

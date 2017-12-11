@@ -70,7 +70,7 @@ export class StrategyComponent implements OnInit {
                 console.log(err);
                 return false;
             });
-        if(this.router.url == "strategy?creator=true"){
+        if(this.router.url == "https://safe-inlet-60328.herokuapp.com/strategy?creator=true"){
             this.isCreator = true;
         }
 
