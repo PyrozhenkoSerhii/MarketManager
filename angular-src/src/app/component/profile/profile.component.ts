@@ -5,7 +5,7 @@ import {CreatorService} from "../../services/creator.service";
 import {FlashMessagesService} from "angular2-flash-messages";
 import {Project} from "../../class/Project";
 import {Strategy} from "../../class/Strategy"
-
+import {ActivatedRoute} from "@angular/router";
 
 @Component({
     selector: 'app-profile',
@@ -22,7 +22,8 @@ export class ProfileComponent implements OnInit {
     constructor(private authService: AuthService,
                 private router: Router,
                 private creator: CreatorService,
-                private flashMessage: FlashMessagesService) {
+                private flashMessage: FlashMessagesService,
+                private activatedRoute:ActivatedRoute) {
         this.getProjects();
         this.getStrategies();
         this.createDummyProgress();

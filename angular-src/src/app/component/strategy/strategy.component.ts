@@ -3,8 +3,8 @@ import {CreatorService} from "../../services/creator.service"
 import {FlashMessagesService} from "angular2-flash-messages";
 import {Router} from "@angular/router";
 import {Project} from "../../class/Project";
-import {forEach} from "@angular/router/src/utils/collection";
 import {AuthService} from "../../services/auth.service";
+import {ActivatedRoute} from "@angular/router";
 
 
 @Component({
@@ -59,7 +59,8 @@ export class StrategyComponent implements OnInit {
     constructor(private creator: CreatorService,
                 private flashMessage: FlashMessagesService,
                 private router: Router,
-                private authService: AuthService) {
+                private authService: AuthService,
+                private route:ActivatedRoute) {
     }
 
     ngOnInit() {
@@ -70,9 +71,10 @@ export class StrategyComponent implements OnInit {
                 console.log(err);
                 return false;
             });
-        if(this.router.url == "https://safe-inlet-60328.herokuapp.com/strategy?creator=true"){
-            this.isCreator = true;
-        }
+
+        this.route.queryParams.subscribe(params=>{
+            this.isCreator = params['creator'] || false;
+        })
 
 
     }
