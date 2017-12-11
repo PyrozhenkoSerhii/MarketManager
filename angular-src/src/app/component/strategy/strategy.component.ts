@@ -70,6 +70,9 @@ export class StrategyComponent implements OnInit {
                 console.log(err);
                 return false;
             });
+        if(this.router.url == "strategy?creator=true"){
+            this.isCreator = true;
+        }
 
 
     }
