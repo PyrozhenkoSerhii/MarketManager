@@ -61,6 +61,9 @@ export class StrategyComponent implements OnInit {
                 private router: Router,
                 private authService: AuthService,
                 private route:ActivatedRoute) {
+        this.route.queryParams.subscribe(params=>{
+            this.isCreator = params['creator'] || false;
+        });
     }
 
     ngOnInit() {
@@ -74,7 +77,7 @@ export class StrategyComponent implements OnInit {
 
         this.route.queryParams.subscribe(params=>{
             this.isCreator = params['creator'] || false;
-        })
+        });
 
 
     }
