@@ -34,7 +34,7 @@ export class StrategyComponent implements OnInit {
 
 
     //page parameters
-    isCreator: Boolean = false;
+    isCreator: Boolean = true;
 
     //strategy for new project
     createdProject: Project;
