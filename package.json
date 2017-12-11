@@ -1,0 +1,34 @@
+{
+  "name": "courseproject",
+  "version": "1.0.0",
+  "description": "my course project",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node app"
+  },
+  "dependencies": {
+    "angular2-moment": "^1.7.0",
+    "bcryptjs": "*",
+    "body-parser": "*",
+    "chart.js": "^2.7.1",
+    "cors": "*",
+    "express": "*",
+    "jquery": "^3.2.1",
+    "jsonwebtoken": "*",
+    "module": "^1.2.5",
+    "moment": "^2.19.2",
+    "momentjs": "^2.0.0",
+    "mongodb": "^2.2.33",
+    "mongoose": "*",
+    "ng2-charts": "^1.6.0",
+    "passport": "*",
+    "passport-jwt": "*",
+    "path": "^0.12.7"
+  },
+  "author": "serhii",
+  "license": "ISC",
+  "devDependencies": {
+    "@types/jquery": "^3.2.16"
+  }
+}
