@@ -1,0 +1,54 @@
+<div class="container" style="margin-top: 10px;">
+    <div class="row">
+        <div class="col-4">
+            <div class="infoBlock">
+                <h4 align="center" style="font-family: Calibri">Strategy info</h4>
+                <p></p>
+                <h6>Name:</h6> {{strategy.name}}<p></p>
+                <h6>Description: </h6>{{strategy.description}}<p></p>
+                <h6>Date: </h6> {{getDate(strategy.createdDate)}}<p></p>
+                <h6>Type of strategy: </h6> {{strategy.type}}<p></p>
+                <h6>Status: </h6> {{getStatusStrategy(strategy.isActive)}}!
+                <button type="button" class="btn btn-warning btn-sm"
+                        (click)="changeStrategyStatus(strategy._id,strategy.isActive)">
+                    Change
+                </button>
+                <h6>Duration: </h6> {{strategy.duration}}hours <p></p>
+
+                <div class="">
+                    <h4 align="center" style="font-family: Calibri">Progress</h4>
+                    <div class="progress">
+                        <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar"
+                             aria-valuenow="75" aria-valuemin="0" aria-valuemax="100" style="width: 75%"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-8">
+            <h4 align="center" style="font-family: Calibri">Process of the strategy</h4>
+
+            <div class="row">
+                <div style="display: block;">
+                    <canvas baseChart width="800" height="250"
+                            [datasets]="lineChartData"
+                            [labels]="lineChartLabels"
+                            [options]="lineChartOptions"
+                            [colors]="lineChartColors"
+                            [legend]="lineChartLegend"
+                            [chartType]="lineChartType"
+                            (chartHover)="chartHovered($event)"
+                            (chartClick)="chartClicked($event)"></canvas>
+                </div>
+            </div>
+
+            <h4 align="center" style="font-family: Calibri">Parameters that were used in the strategy</h4>
+            <div *ngFor="let parameter of parameters">
+                &#8226; {{parameter}}
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
