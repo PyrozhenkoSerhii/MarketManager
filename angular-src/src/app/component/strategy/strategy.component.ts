@@ -62,7 +62,7 @@ export class StrategyComponent implements OnInit {
                 private authService: AuthService,
                 private route:ActivatedRoute) {
         this.route.queryParams.subscribe(params=>{
-            this.isCreator = params['creator'] || false;
+            this.isCreator = true;
         });
     }
 
@@ -76,7 +76,7 @@ export class StrategyComponent implements OnInit {
             });
 
         this.route.queryParams.subscribe(params=>{
-            this.isCreator = params['creator'] || false;
+            this.isCreator = true;
         });
 
 
