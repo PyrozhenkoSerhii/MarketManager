@@ -1,5 +1,5 @@
 module.exports = {
-    database:'mongodb://127.0.0.1:27017/mmmProject',
+    database:'mongodb://Serhii:rjkjbjr12319@ds135916.mlab.com:35916/courseprojectdatabase',
     secret:'yoursecret'
 };
 
