@@ -167,7 +167,7 @@ var AppModule = (function () {
             ],
             imports: [
                 __WEBPACK_IMPORTED_MODULE_0__angular_platform_browser__["a" /* BrowserModule */],
-                __WEBPACK_IMPORTED_MODULE_2__angular_router__["b" /* RouterModule */].forRoot(appRoutes),
+                __WEBPACK_IMPORTED_MODULE_2__angular_router__["c" /* RouterModule */].forRoot(appRoutes),
                 __WEBPACK_IMPORTED_MODULE_12__angular_forms__["a" /* FormsModule */],
                 __WEBPACK_IMPORTED_MODULE_10_angular2_flash_messages__["FlashMessagesModule"],
                 __WEBPACK_IMPORTED_MODULE_3__angular_http__["HttpModule"],
@@ -252,7 +252,7 @@ var AdminPageComponent = (function () {
             styles: [__webpack_require__("../../../../../src/app/component/admin-page/admin-page.component.css")]
         }),
         __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1__services_auth_service__["a" /* AuthService */],
-            __WEBPACK_IMPORTED_MODULE_2__angular_router__["a" /* Router */],
+            __WEBPACK_IMPORTED_MODULE_2__angular_router__["b" /* Router */],
             __WEBPACK_IMPORTED_MODULE_3__services_creator_service__["a" /* CreatorService */],
             __WEBPACK_IMPORTED_MODULE_4_angular2_flash_messages__["FlashMessagesService"]])
     ], AdminPageComponent);
@@ -406,7 +406,7 @@ var LoginComponent = (function () {
         }),
         __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1__services_auth_service__["a" /* AuthService */],
             __WEBPACK_IMPORTED_MODULE_3_angular2_flash_messages__["FlashMessagesService"],
-            __WEBPACK_IMPORTED_MODULE_2__angular_router__["a" /* Router */]])
+            __WEBPACK_IMPORTED_MODULE_2__angular_router__["b" /* Router */]])
     ], LoginComponent);
     return LoginComponent;
 }());
@@ -492,7 +492,7 @@ var MmCreationComponent = (function () {
             styles: [__webpack_require__("../../../../../src/app/component/mm-creation/mm-creation.component.css")]
         }),
         __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1__services_creator_service__["a" /* CreatorService */],
-            __WEBPACK_IMPORTED_MODULE_2__angular_router__["a" /* Router */]])
+            __WEBPACK_IMPORTED_MODULE_2__angular_router__["b" /* Router */]])
     ], MmCreationComponent);
     return MmCreationComponent;
 }());
@@ -571,7 +571,7 @@ var NavbarComponent = (function () {
         }),
         __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1__services_auth_service__["a" /* AuthService */],
             __WEBPACK_IMPORTED_MODULE_3_angular2_flash_messages__["FlashMessagesService"],
-            __WEBPACK_IMPORTED_MODULE_2__angular_router__["a" /* Router */]])
+            __WEBPACK_IMPORTED_MODULE_2__angular_router__["b" /* Router */]])
     ], NavbarComponent);
     return NavbarComponent;
 }());
@@ -630,15 +630,17 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 
 
 
+
 var ProfileComponent = (function () {
-    function ProfileComponent(authService, router, creator, flashMessage) {
+    function ProfileComponent(authService, router, creator, flashMessage, activatedRoute) {
         this.authService = authService;
         this.router = router;
         this.creator = creator;
         this.flashMessage = flashMessage;
+        this.activatedRoute = activatedRoute;
         this.getProjects();
         this.getStrategies();
-        //this.createDummyProgress();
+        this.createDummyProgress();
     }
     ProfileComponent.prototype.ngOnInit = function () {
         var _this = this;
@@ -765,9 +767,10 @@ var ProfileComponent = (function () {
             styles: [__webpack_require__("../../../../../src/app/component/profile/profile.component.css")],
         }),
         __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1__services_auth_service__["a" /* AuthService */],
-            __WEBPACK_IMPORTED_MODULE_2__angular_router__["a" /* Router */],
+            __WEBPACK_IMPORTED_MODULE_2__angular_router__["b" /* Router */],
             __WEBPACK_IMPORTED_MODULE_3__services_creator_service__["a" /* CreatorService */],
-            __WEBPACK_IMPORTED_MODULE_4_angular2_flash_messages__["FlashMessagesService"]])
+            __WEBPACK_IMPORTED_MODULE_4_angular2_flash_messages__["FlashMessagesService"],
+            __WEBPACK_IMPORTED_MODULE_2__angular_router__["a" /* ActivatedRoute */]])
     ], ProfileComponent);
     return ProfileComponent;
 }());
@@ -903,7 +906,7 @@ var ProjectManagerComponent = (function () {
         }),
         __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1__services_creator_service__["a" /* CreatorService */],
             __WEBPACK_IMPORTED_MODULE_2_angular2_flash_messages__["FlashMessagesService"],
-            __WEBPACK_IMPORTED_MODULE_3__angular_router__["a" /* Router */]])
+            __WEBPACK_IMPORTED_MODULE_3__angular_router__["b" /* Router */]])
     ], ProjectManagerComponent);
     return ProjectManagerComponent;
 }());
@@ -1010,7 +1013,7 @@ var RegisterComponent = (function () {
         __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1__services_validate_service__["a" /* ValidateService */],
             __WEBPACK_IMPORTED_MODULE_2_angular2_flash_messages__["FlashMessagesService"],
             __WEBPACK_IMPORTED_MODULE_3__services_auth_service__["a" /* AuthService */],
-            __WEBPACK_IMPORTED_MODULE_4__angular_router__["a" /* Router */]])
+            __WEBPACK_IMPORTED_MODULE_4__angular_router__["b" /* Router */]])
     ], RegisterComponent);
     return RegisterComponent;
 }());
@@ -1180,7 +1183,7 @@ var StrategyManagerComponent = (function () {
         }),
         __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1__services_creator_service__["a" /* CreatorService */],
             __WEBPACK_IMPORTED_MODULE_2_angular2_flash_messages__["FlashMessagesService"],
-            __WEBPACK_IMPORTED_MODULE_3__angular_router__["a" /* Router */]])
+            __WEBPACK_IMPORTED_MODULE_3__angular_router__["b" /* Router */]])
     ], StrategyManagerComponent);
     return StrategyManagerComponent;
 }());
@@ -1210,7 +1213,7 @@ module.exports = module.exports.toString();
 /***/ "../../../../../src/app/component/strategy/strategy.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<script src=\"https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js\"></script>\n<div class=\"container\">\n    <div *ngIf=\"user\">\n\n    <h1>Your strategy</h1>\n    <p class=\"lead\">Here you can create a strategy for your projects</p>\n\n    <script src=\"strategy.component.ts\"></script>\n    <br>\n    <form (submit)=\"onStrategyCreation()\">\n\n        <div class=\"firstBlock\" id=\"firstBlock\">\n\n            <div class=\"projectElector\">\n                <div *ngIf=\"isCreator\">\n                    <div class=\"row\">\n                        <div class=\"row-8\">\n                            <h4>Chosen project: {{createdProject.name}}</h4>\n                        </div>\n                        <div class=\"row-4\">\n                            <button type=\"button\" class=\"btn btn-warning btn-sm\" (click)=\"changeProject()\">Back</button>\n                        </div>\n                    </div>\n                </div>\n                <div *ngIf=\"!isCreator\">\n                    <div class=\"projectContent\">\n                        <label>Chose project</label>\n                    </div>\n                    <select class=\"form-control\" #curProject (change)=\"changeCurrentProject(curProject.value)\">\n                        <option>Choose project</option>\n                        <option *ngFor=\"let project of projects\" [value]=\"project.name\">{{project.name}}</option>\n                    </select>\n                </div>\n                <br>\n            </div>\n\n            <div class=\"form-group\">\n                <label>Name of the strategy</label>\n                <input type=\"text\" [(ngModel)]=\"name\" name=\"name\" class=\"form-control\">\n            </div>\n            <div class=\"form-group\">\n                <label>Describe the strategy</label>\n                <input type=\"text\" [(ngModel)]=\"description\" name=\"description\" class=\"form-control\">\n            </div>\n            <div class=\"form-group\">\n                <label>What is the approximate duration of the strategy (hours)?</label>\n                <input type=\"text\" [(ngModel)]=\"duration\" name=\"duration\" class=\"form-control\">\n            </div>\n            <button type=\"button\" class=\"btn btn-primary btn-sm\" (click)=\"changeBlock('firstBlock','secondBlock')\">Next\n                step\n            </button>\n        </div>\n\n        <div class=\"secondBlock\" id=\"secondBlock\">\n            <div class=\"form-group\">\n                <label>What do you want to track?</label>\n                <select class=\"form-control\" #trackingPoint (change)=\"changeTrackingPoint(trackingPoint.value)\">\n                    <option>Amount of income</option>\n                    <option>Amount of customers</option>\n                </select>\n            </div>\n            <div class=\"form-group\">\n                <label>Please, enter an initial data that was before applying the strategy (customers/money for a\n                    day)</label>\n                <input type=\"text\" [(ngModel)]=\"initialData\" name=\"initialData\" class=\"form-control\">\n            </div>\n            <button type=\"button\" class=\"btn btn-primary btn-sm\" (click)=\"changeBlock('secondBlock','thirdBlock')\">Next\n                step\n            </button>\n        </div>\n\n        <div class=\"thirdBlock\" id=\"thirdBlock\">\n            <div class=\"form-group\">\n                <label>What kind of strategy is it?</label>\n                <select class=\"form-control\" #strategy (change)=\"changeStrategyType(strategy.value)\">\n                    <option>Advertisement</option>\n                    <option>Environment</option>\n                    <option>Promotions</option>\n                </select>\n            </div>\n            <div class=\"form-group\">\n                <label>Do you want to use our devices such as cameras and sensors?</label>\n                <select class=\"form-control\" #IoT (change)=\"changeIoTDevices(IoT.value)\">\n                    <option>Do not use</option>\n                    <option>Cameras</option>\n                    <option>Sensors</option>\n                    <option>Both of them</option>\n                </select>\n            </div>\n            <button type=\"button\" class=\"btn btn-primary btn-sm\" (click)=\"changeBlock('thirdBlock','fourthBlock')\">Next\n                step\n            </button>\n        </div>\n\n        <div class=\"fourthBlock\" id=\"fourthBlock\">\n            <label>You have chosen a next type of strategy: <b>{{type}}</b>.</label><br>\n            <label>Here you can enter parameters that you want to apply with your current strategy</label>\n            <br>\n            <div class=\"row\">\n                <div class=\"col-3\">\n                    <h6>Name of parameter: </h6>\n                </div>\n                <div class=\"col-2\">\n                    <input type=\"text\" [(ngModel)]=\"parameterName\" id=\"parameterName\" name=\"parameterName\"\n                           class=\"form-control\">\n                </div>\n                <div class=\"col-3\">\n                    <h6>Value of parameter: </h6>\n                </div>\n                <div class=\"col-2\">\n                    <input type=\"text\" [(ngModel)]=\"parameterValue\" id=\"parameterValue\" name=\"parameterValue\"\n                           class=\"form-control\">\n                </div>\n                <div class=\"col-2\">\n                    <button type=\"button\" class=\"btn btn-primary btn-warning\" (click)=\"addParameter()\">+</button>\n                </div>\n            </div>\n            <table>\n                <tr>\n                    <th><h5>Parameters:</h5></th>\n                </tr>\n                <tr *ngFor='let parameter of parametersArray'>\n                    <td>&#8226;{{parameter}}</td>\n                </tr>\n            </table>\n            <br>\n\n\n            <input type=\"submit\" class=\"btn btn-primary\" value=\"Create\">\n        </div>\n\n    </form>\n    </div>\n</div>\n"
+module.exports = "<script src=\"https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js\"></script>\n<div class=\"container\">\n    <div *ngIf=\"user\">\n\n    <h1>Your strategy</h1>\n    <p class=\"lead\">Here you can create a strategy for your projects</p>\n\n    <script src=\"strategy.component.ts\"></script>\n    <br>\n    <form (submit)=\"onStrategyCreation()\">\n\n        <div class=\"firstBlock\" id=\"firstBlock\">\n\n            <div class=\"projectElector\">\n                <div *ngIf=\"isCreator\">\n                    <div class=\"row\">\n                        <div class=\"row-8\">\n                            <h4>Chosen project: {{createdProject.name}}</h4>\n                        </div>\n                        <div class=\"row-4\">\n                            <button type=\"button\" class=\"btn btn-warning btn-sm\" (click)=\"changeProject()\">Back</button>\n                        </div>\n                    </div>\n                </div>\n                <div *ngIf=\"!isCreator\">\n                    <div class=\"projectContent\">\n                        <label>Choose your project</label>\n                    </div>\n                    <select class=\"form-control\" #curProject (change)=\"changeCurrentProject(curProject.value)\">\n                        <option>Choose project</option>\n                        <option *ngFor=\"let project of projects\" [value]=\"project.name\">{{project.name}}</option>\n                    </select>\n                </div>\n                <br>\n            </div>\n\n            <div class=\"form-group\">\n                <label>Name of the strategy</label>\n                <input type=\"text\" [(ngModel)]=\"name\" name=\"name\" class=\"form-control\">\n            </div>\n            <div class=\"form-group\">\n                <label>Describe the strategy</label>\n                <input type=\"text\" [(ngModel)]=\"description\" name=\"description\" class=\"form-control\">\n            </div>\n            <div class=\"form-group\">\n                <label>What is the approximate duration of the strategy (hours)?</label>\n                <input type=\"text\" [(ngModel)]=\"duration\" name=\"duration\" class=\"form-control\">\n            </div>\n            <button type=\"button\" class=\"btn btn-primary btn-sm\" (click)=\"changeBlock('firstBlock','secondBlock')\">Next\n                step\n            </button>\n        </div>\n\n        <div class=\"secondBlock\" id=\"secondBlock\">\n            <div class=\"form-group\">\n                <label>What do you want to track?</label>\n                <select class=\"form-control\" #trackingPoint (change)=\"changeTrackingPoint(trackingPoint.value)\">\n                    <option>Amount of income</option>\n                    <option>Amount of customers</option>\n                </select>\n            </div>\n            <div class=\"form-group\">\n                <label>Please, enter an initial data that was before applying the strategy (customers/money for a\n                    day)</label>\n                <input type=\"text\" [(ngModel)]=\"initialData\" name=\"initialData\" class=\"form-control\">\n            </div>\n            <button type=\"button\" class=\"btn btn-primary btn-sm\" (click)=\"changeBlock('secondBlock','thirdBlock')\">Next\n                step\n            </button>\n        </div>\n\n        <div class=\"thirdBlock\" id=\"thirdBlock\">\n            <div class=\"form-group\">\n                <label>What kind of strategy is it?</label>\n                <select class=\"form-control\" #strategy (change)=\"changeStrategyType(strategy.value)\">\n                    <option>Advertisement</option>\n                    <option>Environment</option>\n                    <option>Promotions</option>\n                </select>\n            </div>\n            <div class=\"form-group\">\n                <label>Do you want to use our devices such as cameras and sensors?</label>\n                <select class=\"form-control\" #IoT (change)=\"changeIoTDevices(IoT.value)\">\n                    <option>Do not use</option>\n                    <option>Cameras</option>\n                    <option>Sensors</option>\n                    <option>Both of them</option>\n                </select>\n            </div>\n            <button type=\"button\" class=\"btn btn-primary btn-sm\" (click)=\"changeBlock('thirdBlock','fourthBlock')\">Next\n                step\n            </button>\n        </div>\n\n        <div class=\"fourthBlock\" id=\"fourthBlock\">\n            <label>You have chosen a next type of strategy: <b>{{type}}</b>.</label><br>\n            <label>Here you can enter parameters that you want to apply with your current strategy</label>\n            <br>\n            <div class=\"row\">\n                <div class=\"col-3\">\n                    <h6>Name of parameter: </h6>\n                </div>\n                <div class=\"col-2\">\n                    <input type=\"text\" [(ngModel)]=\"parameterName\" id=\"parameterName\" name=\"parameterName\"\n                           class=\"form-control\">\n                </div>\n                <div class=\"col-3\">\n                    <h6>Value of parameter: </h6>\n                </div>\n                <div class=\"col-2\">\n                    <input type=\"text\" [(ngModel)]=\"parameterValue\" id=\"parameterValue\" name=\"parameterValue\"\n                           class=\"form-control\">\n                </div>\n                <div class=\"col-2\">\n                    <button type=\"button\" class=\"btn btn-primary btn-warning\" (click)=\"addParameter()\">+</button>\n                </div>\n            </div>\n            <table>\n                <tr>\n                    <th><h5>Parameters:</h5></th>\n                </tr>\n                <tr *ngFor='let parameter of parametersArray'>\n                    <td>&#8226;{{parameter}}</td>\n                </tr>\n            </table>\n            <br>\n\n\n            <input type=\"submit\" class=\"btn btn-primary\" value=\"Create\">\n        </div>\n\n    </form>\n    </div>\n</div>\n"
 
 /***/ }),
 
@@ -1239,12 +1242,15 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 
 
 
+
 var StrategyComponent = (function () {
-    function StrategyComponent(creator, flashMessage, router, authService) {
+    function StrategyComponent(creator, flashMessage, router, authService, route) {
+        var _this = this;
         this.creator = creator;
         this.flashMessage = flashMessage;
         this.router = router;
         this.authService = authService;
+        this.route = route;
         this.user = localStorage.getItem('user_id');
         this.timeCompleted = '';
         this.progress = {};
@@ -1256,6 +1262,9 @@ var StrategyComponent = (function () {
         this.parameterValue = '';
         this.parameters = {};
         this.parametersArray = [];
+        this.route.queryParams.subscribe(function (params) {
+            _this.isCreator = params['creator'] || false;
+        });
     }
     StrategyComponent.prototype.ngOnInit = function () {
         var _this = this;
@@ -1264,6 +1273,9 @@ var StrategyComponent = (function () {
         }, function (err) {
             console.log(err);
             return false;
+        });
+        this.route.queryParams.subscribe(function (params) {
+            _this.isCreator = params['creator'] || false;
         });
     };
     StrategyComponent.prototype.onStrategyCreation = function () {
@@ -1389,8 +1401,9 @@ var StrategyComponent = (function () {
         }),
         __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1__services_creator_service__["a" /* CreatorService */],
             __WEBPACK_IMPORTED_MODULE_2_angular2_flash_messages__["FlashMessagesService"],
-            __WEBPACK_IMPORTED_MODULE_3__angular_router__["a" /* Router */],
-            __WEBPACK_IMPORTED_MODULE_4__services_auth_service__["a" /* AuthService */]])
+            __WEBPACK_IMPORTED_MODULE_3__angular_router__["b" /* Router */],
+            __WEBPACK_IMPORTED_MODULE_4__services_auth_service__["a" /* AuthService */],
+            __WEBPACK_IMPORTED_MODULE_3__angular_router__["a" /* ActivatedRoute */]])
     ], StrategyComponent);
     return StrategyComponent;
 }());
@@ -1435,7 +1448,7 @@ var AuthGuard = (function () {
     };
     AuthGuard = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Injectable"])(),
-        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_2__services_auth_service__["a" /* AuthService */], __WEBPACK_IMPORTED_MODULE_1__angular_router__["a" /* Router */]])
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_2__services_auth_service__["a" /* AuthService */], __WEBPACK_IMPORTED_MODULE_1__angular_router__["b" /* Router */]])
     ], AuthGuard);
     return AuthGuard;
 }());

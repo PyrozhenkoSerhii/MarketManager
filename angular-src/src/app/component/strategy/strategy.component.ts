@@ -34,7 +34,7 @@ export class StrategyComponent implements OnInit {
 
 
     //page parameters
-    isCreator: Boolean = true;
+    isCreator: Boolean = false;
 
     //strategy for new project
     createdProject: Project;
@@ -62,7 +62,7 @@ export class StrategyComponent implements OnInit {
                 private authService: AuthService,
                 private route:ActivatedRoute) {
         this.route.queryParams.subscribe(params=>{
-            this.isCreator = true;
+            this.isCreator = params['creator'] || false;
         });
     }
 
@@ -76,7 +76,7 @@ export class StrategyComponent implements OnInit {
             });
 
         this.route.queryParams.subscribe(params=>{
-            this.isCreator = true;
+            this.isCreator = params['creator'] || false;
         });
 
 
