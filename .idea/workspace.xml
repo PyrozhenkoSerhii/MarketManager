@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="860bd2df-66fc-4fd9-a830-921e144be390" name="Default" comment="" />
+    <list default="true" id="860bd2df-66fc-4fd9-a830-921e144be390" name="Default" comment="">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/angular-src/src/app/component/strategy/strategy.component.html" afterPath="$PROJECT_DIR$/angular-src/src/app/component/strategy/strategy.component.html" />
+    </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -14,10 +16,10 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="strategy.component.ts" pinned="false" current-in-tab="true">
+      <file leaf-file-name="strategy.component.ts" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/angular-src/src/app/component/strategy/strategy.component.ts">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="442">
+            <state relative-caret-position="493">
               <caret line="36" column="29" lean-forward="false" selection-start-line="36" selection-start-column="29" selection-end-line="36" selection-end-column="29" />
               <folding>
                 <element signature="e#0#48#0" expanded="true" />
@@ -58,11 +60,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="strategy.component.html" pinned="false" current-in-tab="false">
+      <file leaf-file-name="strategy.component.html" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/angular-src/src/app/component/strategy/strategy.component.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="170">
-              <caret line="14" column="37" lean-forward="false" selection-start-line="14" selection-start-column="28" selection-end-line="14" selection-end-column="37" />
+            <state relative-caret-position="255">
+              <caret line="26" column="43" lean-forward="false" selection-start-line="26" selection-start-column="43" selection-end-line="26" selection-end-column="43" />
               <folding>
                 <element signature="n#div#1;n#div#0;n#form#0;n#div#0;n#div#0;n#!!top" expanded="false" />
                 <element signature="n#div#1;n#form#0;n#div#0;n#div#0;n#!!top" expanded="false" />
@@ -186,7 +188,6 @@
         <option value="$PROJECT_DIR$/routes/strategies.js" />
         <option value="$PROJECT_DIR$/angular-src/src/app/component/strategy-manager/strategy-manager.component.ts" />
         <option value="$PROJECT_DIR$/angular-src/src/app/services/admin-func.service.ts" />
-        <option value="$PROJECT_DIR$/angular-src/src/app/component/strategy/strategy.component.html" />
         <option value="$PROJECT_DIR$/angular-src/src/app/app.module.ts" />
         <option value="$PROJECT_DIR$/models/user.js" />
         <option value="$PROJECT_DIR$/models/strategy.js" />
@@ -198,6 +199,7 @@
         <option value="$PROJECT_DIR$/config/database.js" />
         <option value="$PROJECT_DIR$/angular-src/src/app/component/profile/profile.component.ts" />
         <option value="$PROJECT_DIR$/angular-src/src/app/component/strategy/strategy.component.ts" />
+        <option value="$PROJECT_DIR$/angular-src/src/app/component/strategy/strategy.component.html" />
       </list>
     </option>
   </component>
@@ -343,12 +345,12 @@
       <workItem from="1510433299252" duration="18929000" />
       <workItem from="1510853950797" duration="72025000" />
       <workItem from="1512468155364" duration="615000" />
-      <workItem from="1513010187745" duration="4419000" />
+      <workItem from="1513010187745" duration="4582000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="187375000" />
+    <option name="totallyTimeSpent" value="187538000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
@@ -780,25 +782,25 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/angular-src/src/app/component/strategy/strategy.component.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="493">
+          <caret line="36" column="29" lean-forward="false" selection-start-line="36" selection-start-column="29" selection-end-line="36" selection-end-column="29" />
+          <folding>
+            <element signature="e#0#48#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/angular-src/src/app/component/strategy/strategy.component.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="14" column="37" lean-forward="false" selection-start-line="14" selection-start-column="28" selection-end-line="14" selection-end-column="37" />
+        <state relative-caret-position="255">
+          <caret line="26" column="43" lean-forward="false" selection-start-line="26" selection-start-column="43" selection-end-line="26" selection-end-column="43" />
           <folding>
             <element signature="n#div#1;n#div#0;n#form#0;n#div#0;n#div#0;n#!!top" expanded="false" />
             <element signature="n#div#1;n#form#0;n#div#0;n#div#0;n#!!top" expanded="false" />
             <element signature="n#div#2;n#form#0;n#div#0;n#div#0;n#!!top" expanded="false" />
             <element signature="n#div#3;n#form#0;n#div#0;n#div#0;n#!!top" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/angular-src/src/app/component/strategy/strategy.component.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="442">
-          <caret line="36" column="29" lean-forward="false" selection-start-line="36" selection-start-column="29" selection-end-line="36" selection-end-column="29" />
-          <folding>
-            <element signature="e#0#48#0" expanded="true" />
           </folding>
         </state>
       </provider>
