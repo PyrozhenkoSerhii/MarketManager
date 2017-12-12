@@ -7,7 +7,7 @@ const User = require('../models/user');
 
 //register
 router.post('/register',function(req,res,next){
-    console.log(req)
+    console.log(req.body);
     // noinspection JSAnnotator
     let newUser = new User({
         name:req.body.name,
@@ -28,7 +28,7 @@ router.post('/register',function(req,res,next){
 
 //authenticate
 router.post('/authenticate',function(req,res,next){
-    console.log(req);
+    //console.log(req.body);
 
     const username = req.body.username;
     const password = req.body.password;
