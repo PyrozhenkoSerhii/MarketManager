@@ -7,7 +7,7 @@ const User = require('../models/user');
 
 //register
 router.post('/register',function(req,res,next){
-    console.log(req.body)
+    console.log(req.query)
     // noinspection JSAnnotator
     let newUser = new User({
         name:req.body.name,
