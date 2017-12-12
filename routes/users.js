@@ -9,21 +9,21 @@ const User = require('../models/user');
 router.post('/register',function(req,res,next){
     console.log(req)
     // noinspection JSAnnotator
-    let newUser = new User({
-        name:req.body.name,
-        email:req.body.email,
-        username:req.body.username,
-        password:req.body.password,
-        isAdmin:req.body.isAdmin
-    });
-
-    User.addUser(newUser,function (err, user) {
-        if(err){
-            res.json({success:false,msg:'Failed to register user'})
-        }else{
-            res.json({success:true,msg:'User registered'})
-        }
-    });
+    // let newUser = new User({
+    //     name:req.body.name,
+    //     email:req.body.email,
+    //     username:req.body.username,
+    //     password:req.body.password,
+    //     isAdmin:req.body.isAdmin
+    // });
+    //
+    // User.addUser(newUser,function (err, user) {
+    //     if(err){
+    //         res.json({success:false,msg:'Failed to register user'})
+    //     }else{
+    //         res.json({success:true,msg:'User registered'})
+    //     }
+    // });
 });
 
 //authenticate
