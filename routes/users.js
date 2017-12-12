@@ -30,34 +30,34 @@ router.post('/register',function(req,res,next){
 router.post('/authenticate',function(req,res,next){
     console.log(req);
 
-    const username = req.body.username;
-    const password = req.body.password;
-
-    User.getUserByUsername(username,function (err,user) {
-        if(err) throw err;
-        if(!user){
-            return res.json({success:false,msg:'User not found'});
-        }
-        User.comparePassword(password,user.password, function (err,isMatch){
-            if(err) throw err;
-            if(isMatch){
-                const token = jwt.sign({data:user}, config.secret,{expiresIn:604800});
-                res.json({
-                    success:true,
-                    token:'JWT '+token,
-                    user:{
-                        id:user._id,
-                        name:user.name,
-                        username:user.username,
-                        email:user.email,
-                        isAdmin:user.isAdmin
-                    }
-                });
-            }else{
-                return res.json({success:false,msg:'Wrong password'});
-            }
-        });
-    });
+    // const username = req.body.username;
+    // const password = req.body.password;
+    //
+    // User.getUserByUsername(username,function (err,user) {
+    //     if(err) throw err;
+    //     if(!user){
+    //         return res.json({success:false,msg:'User not found'});
+    //     }
+    //     User.comparePassword(password,user.password, function (err,isMatch){
+    //         if(err) throw err;
+    //         if(isMatch){
+    //             const token = jwt.sign({data:user}, config.secret,{expiresIn:604800});
+    //             res.json({
+    //                 success:true,
+    //                 token:'JWT '+token,
+    //                 user:{
+    //                     id:user._id,
+    //                     name:user.name,
+    //                     username:user.username,
+    //                     email:user.email,
+    //                     isAdmin:user.isAdmin
+    //                 }
+    //             });
+    //         }else{
+    //             return res.json({success:false,msg:'Wrong password'});
+    //         }
+    //     });
+    // });
 });
 
 //profile
