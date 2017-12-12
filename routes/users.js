@@ -28,6 +28,8 @@ router.post('/register',function(req,res,next){
 
 //authenticate
 router.post('/authenticate',function(req,res,next){
+    console.log(req);
+
     const username = req.body.username;
     const password = req.body.password;
 
