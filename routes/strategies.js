@@ -74,7 +74,21 @@ router.post('/getStrategyById',function (req,res,next) {
         }else{
             res.json({
                 success:true,
-                strategies: strategy
+                _id:strategy.id,
+                name:strategy.name,
+                description:strategy.description,
+                duration:strategy.duration,
+                timeCompleted:strategy.timeCompleted,
+                trackingPoint:strategy.trackingPoint,
+                initialData:strategy.initialData,
+                progress:strategy.progress,
+                iotTech:strategy.iotTech,
+                type:strategy.type,
+                parameters:strategy.parameters,
+                isActive:strategy.isActive,
+                createdDate:strategy.createdDate,
+                project:strategy.project,
+                user:strategy.user
             });
         }
     })
