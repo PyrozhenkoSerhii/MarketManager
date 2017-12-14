@@ -65,6 +65,21 @@ router.post('/getStrategiesByProjectId',function (req,res,next) {
     })
 });
 
+router.post('/getStrategyById',function (req,res,next) {
+    var id = req.body.id;
+
+    Strategy.getStrategyById(project,function (err,strategy) {
+        if(err){
+            res.json({success:false,msg:'Failed to get strategy'})
+        }else{
+            res.json({
+                success:true,
+                strategy: strategy
+            });
+        }
+    })
+});
+
 router.post('/deleteStrategy',function (req,res,next) {
     var strategy = req.body.strategy;
 
@@ -100,5 +115,6 @@ router.post('/changeProgress', function (req, res, next) {
         }
     })
 });
+
 
 module.exports = router;
