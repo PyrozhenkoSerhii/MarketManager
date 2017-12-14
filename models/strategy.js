@@ -86,17 +86,9 @@ module.exports.getStrategyByProjectId = function (project, callback) {
     });
 };
 
-// module.exports.getStrategyById = function (id, callback){
-//     mongoClient.connect(URL, function(err, db) {
-//         if (err) throw err;
-//         db.collection('strategies',function(err,collection){
-//             collection.findOne({'_id':ObjectId(id)}, function(err, cursor){
-//                 cursor.toArray(callback);
-//                 db.close();
-//             });
-//         })
-//     });
-// };
+module.exports.getStrategyById = function (id, callback){
+    Strategy.findById(id,callback);
+};
 
 
 module.exports.addStrategy = function (newStrategy,callback) {
