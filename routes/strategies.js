@@ -74,7 +74,7 @@ router.post('/getStrategyById',function (req,res,next) {
         }else{
             res.json({
                 success:true,
-                strategy: strategy
+                strategies: strategy
             });
         }
     })
