@@ -2,133 +2,155 @@
 <div class="container">
     <div *ngIf="user">
 
-    <h1>Your strategy</h1>
-    <p class="lead">Here you can create a strategy for your projects</p>
+        <h1>Your strategy</h1>
+        <p class="lead">Here you can create a strategy for your projects</p>
 
-    <script src="strategy.component.ts"></script>
-    <br>
-    <form (submit)="onStrategyCreation()" class="form-horizontal">
+        <div class="row">
+            <div class="col-md-3"></div>
+            <div class="col-md-6">
 
-        <div class="firstBlock" id="firstBlock">
-
-            <div class="projectElector">
-                <div *ngIf="isCreator">
-                    <div class="row">
-                        <div class="row-8">
-                            <h4>Chosen project: {{createdProject.name}}</h4>
-                        </div>
-                        <div class="row-4">
-                            <button type="button" class="btn btn-warning btn-sm" (click)="changeProject()">Back</button>
-                        </div>
-                    </div>
-                </div>
-                <div *ngIf="!isCreator">
-                    <div class="projectContent">
-                        <label>Choose project</label>
-                    </div>
-                    <select class="form-control" #curProject (change)="changeCurrentProject(curProject.value)">
-                        <option>Choose project</option>
-                        <option *ngFor="let project of projects" [value]="project.name">{{project.name}}</option>
-                    </select>
-                </div>
+                <script src="strategy.component.ts"></script>
                 <br>
-            </div>
+                <form (submit)="onStrategyCreation()" class="form-horizontal">
 
-            <div class="form-group">
-                <label>Name of the strategy</label>
-                <input type="text" [(ngModel)]="name" name="name" class="form-control">
+                    <div class="firstBlock" id="firstBlock">
+
+                        <div class="projectElector">
+                            <div *ngIf="isCreator">
+                                <div class="row">
+                                    <div class="row-8">
+                                        <h4>Chosen project: {{createdProject.name}}</h4>
+                                    </div>
+                                    <div class="row-4">
+                                        <button type="button" class="btn btn-warning btn-sm" (click)="changeProject()">
+                                            Back
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                            <div *ngIf="!isCreator">
+                                <div class="projectContent">
+                                    <label>Choose project</label>
+                                </div>
+                                <select class="form-control" #curProject
+                                        (change)="changeCurrentProject(curProject.value)">
+                                    <option>Choose project</option>
+                                    <option *ngFor="let project of projects" [value]="project.name">{{project.name}}
+                                    </option>
+                                </select>
+                            </div>
+                            <br>
+                        </div>
+
+                        <div class="form-group">
+                            <label>Name of the strategy</label>
+                            <input type="text" [(ngModel)]="name" name="name" class="form-control">
+                        </div>
+                        <div class="form-group">
+                            <label>Describe the strategy</label>
+                            <input type="text" [(ngModel)]="description" name="description" class="form-control">
+                        </div>
+                        <div class="form-group">
+                            <label>What is the approximate duration of the strategy (hours)?</label>
+                            <input type="text" [(ngModel)]="duration" name="duration" class="form-control">
+                        </div>
+                        <button type="button" class="btn btn-primary btn-sm center-block"
+                                style="text-align: center; float:none"
+                                (click)="changeBlock('firstBlock','secondBlock')">Next
+                            step
+                        </button>
+                    </div>
+
+                    <div class="secondBlock" id="secondBlock">
+                        <div class="form-group">
+                            <label>What do you want to track?</label>
+                            <select class="form-control" #trackingPoint
+                                    (change)="changeTrackingPoint(trackingPoint.value)">
+                                <option>Amount of income</option>
+                                <option>Amount of customers</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label>Please, enter an initial data that was before applying the strategy (customers/money
+                                for a
+                                day)</label>
+                            <input type="text" [(ngModel)]="initialData" name="initialData" class="form-control">
+                        </div>
+                        <button type="button" class="btn btn-primary btn-sm center-block"
+                                style="text-align: center; float:none"
+                                (click)="changeBlock('secondBlock','thirdBlock')">Next
+                            step
+                        </button>
+                    </div>
+
+                    <div class="thirdBlock" id="thirdBlock">
+                        <div class="form-group">
+                            <label>What kind of strategy is it?</label>
+                            <select class="form-control" #strategy (change)="changeStrategyType(strategy.value)">
+                                <option>Advertisement</option>
+                                <option>Environment</option>
+                                <option>Promotions</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label>Do you want to use our devices such as cameras and sensors?</label>
+                            <select class="form-control" #IoT (change)="changeIoTDevices(IoT.value)">
+                                <option>Do not use</option>
+                                <option>Cameras</option>
+                                <option>Sensors</option>
+                                <option>Both of them</option>
+                            </select>
+                        </div>
+                        <button type="button" class="btn btn-primary btn-sm center-block"
+                                style="text-align: center; float:none"
+                                (click)="changeBlock('thirdBlock','fourthBlock')">Next
+                            step
+                        </button>
+                    </div>
+
+                    <div class="fourthBlock" id="fourthBlock">
+                        <label>You have chosen a next type of strategy: <b>{{type}}</b>.</label><br>
+                        <label>Here you can enter parameters that you want to apply with your current strategy</label>
+                        <br>
+                        <div class="row">
+                            <div class="col-3">
+                                <h6>Name of parameter: </h6>
+                            </div>
+                            <div class="col-2">
+                                <input type="text" [(ngModel)]="parameterName" id="parameterName" name="parameterName"
+                                       class="form-control">
+                            </div>
+                            <div class="col-3">
+                                <h6>Value of parameter: </h6>
+                            </div>
+                            <div class="col-2">
+                                <input type="text" [(ngModel)]="parameterValue" id="parameterValue"
+                                       name="parameterValue"
+                                       class="form-control">
+                            </div>
+                            <div class="col-2">
+                                <button type="button" class="btn btn-primary btn-sm center-block"
+                                        style="text-align: center; float:none" (click)="addParameter()">+
+                                </button>
+                            </div>
+                        </div>
+                        <table>
+                            <tr>
+                                <th><h5>Parameters:</h5></th>
+                            </tr>
+                            <tr *ngFor='let parameter of parametersArray'>
+                                <td>&#8226;{{parameter}}</td>
+                            </tr>
+                        </table>
+                        <br>
+
+
+                        <input type="submit" class="btn btn-primary btn-sm center-block"
+                               style="text-align: center; float:none" value="Create">
+                    </div>
+
+                </form>
             </div>
-            <div class="form-group">
-                <label>Describe the strategy</label>
-                <input type="text" [(ngModel)]="description" name="description" class="form-control">
-            </div>
-            <div class="form-group">
-                <label>What is the approximate duration of the strategy (hours)?</label>
-                <input type="text" [(ngModel)]="duration" name="duration" class="form-control">
-            </div>
-            <button type="button" class="btn btn-primary btn-sm" (click)="changeBlock('firstBlock','secondBlock')">Next
-                step
-            </button>
         </div>
-
-        <div class="secondBlock" id="secondBlock">
-            <div class="form-group">
-                <label>What do you want to track?</label>
-                <select class="form-control" #trackingPoint (change)="changeTrackingPoint(trackingPoint.value)">
-                    <option>Amount of income</option>
-                    <option>Amount of customers</option>
-                </select>
-            </div>
-            <div class="form-group">
-                <label>Please, enter an initial data that was before applying the strategy (customers/money for a
-                    day)</label>
-                <input type="text" [(ngModel)]="initialData" name="initialData" class="form-control">
-            </div>
-            <button type="button" class="btn btn-primary btn-sm" (click)="changeBlock('secondBlock','thirdBlock')">Next
-                step
-            </button>
-        </div>
-
-        <div class="thirdBlock" id="thirdBlock">
-            <div class="form-group">
-                <label>What kind of strategy is it?</label>
-                <select class="form-control" #strategy (change)="changeStrategyType(strategy.value)">
-                    <option>Advertisement</option>
-                    <option>Environment</option>
-                    <option>Promotions</option>
-                </select>
-            </div>
-            <div class="form-group">
-                <label>Do you want to use our devices such as cameras and sensors?</label>
-                <select class="form-control" #IoT (change)="changeIoTDevices(IoT.value)">
-                    <option>Do not use</option>
-                    <option>Cameras</option>
-                    <option>Sensors</option>
-                    <option>Both of them</option>
-                </select>
-            </div>
-            <button type="button" class="btn btn-primary btn-sm" (click)="changeBlock('thirdBlock','fourthBlock')">Next
-                step
-            </button>
-        </div>
-
-        <div class="fourthBlock" id="fourthBlock">
-            <label>You have chosen a next type of strategy: <b>{{type}}</b>.</label><br>
-            <label>Here you can enter parameters that you want to apply with your current strategy</label>
-            <br>
-            <div class="row">
-                <div class="col-3">
-                    <h6>Name of parameter: </h6>
-                </div>
-                <div class="col-2">
-                    <input type="text" [(ngModel)]="parameterName" id="parameterName" name="parameterName"
-                           class="form-control">
-                </div>
-                <div class="col-3">
-                    <h6>Value of parameter: </h6>
-                </div>
-                <div class="col-2">
-                    <input type="text" [(ngModel)]="parameterValue" id="parameterValue" name="parameterValue"
-                           class="form-control">
-                </div>
-                <div class="col-2">
-                    <button type="button" class="btn btn-primary btn-warning" (click)="addParameter()">+</button>
-                </div>
-            </div>
-            <table>
-                <tr>
-                    <th><h5>Parameters:</h5></th>
-                </tr>
-                <tr *ngFor='let parameter of parametersArray'>
-                    <td>&#8226;{{parameter}}</td>
-                </tr>
-            </table>
-            <br>
-
-
-            <input type="submit" class="btn btn-primary" value="Create">
-        </div>
-
-    </form>
     </div>
 </div>
