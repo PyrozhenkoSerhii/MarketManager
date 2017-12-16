@@ -2,12 +2,11 @@
 <div class="container">
     <div *ngIf="user">
 
-        <h1>Your strategy</h1>
-        <p class="lead">Here you can create a strategy for your projects</p>
-
         <div class="row">
             <div class="col-md-3"></div>
             <div class="col-md-6">
+                <h1>Your strategy</h1>
+                <p class="lead">Here you can create a strategy for your projects</p>
 
                 <script src="strategy.component.ts"></script>
                 <br>
@@ -29,11 +28,8 @@
                                 </div>
                             </div>
                             <div *ngIf="!isCreator">
-                                <div class="projectContent">
-                                    <label>Choose project</label>
-                                </div>
                                 <select class="form-control" #curProject
-                                        (change)="changeCurrentProject(curProject.value)">
+                                        (change)="changeCurrentProject(curProject.value)" >
                                     <option>Choose project</option>
                                     <option *ngFor="let project of projects" [value]="project.name">{{project.name}}
                                     </option>
@@ -43,16 +39,13 @@
                         </div>
 
                         <div class="form-group">
-                            <label>Name of the strategy</label>
-                            <input type="text" [(ngModel)]="name" name="name" class="form-control">
+                            <input type="text" [(ngModel)]="name" name="name" class="form-control" placeholder="Name of strategy" >
                         </div>
                         <div class="form-group">
-                            <label>Describe the strategy</label>
-                            <input type="text" [(ngModel)]="description" name="description" class="form-control">
+                            <input type="text" [(ngModel)]="description" name="description" class="form-control" placeholder="Description of project">
                         </div>
                         <div class="form-group">
-                            <label>What is the approximate duration of the strategy (hours)?</label>
-                            <input type="text" [(ngModel)]="duration" name="duration" class="form-control">
+                            <input type="text" [(ngModel)]="duration" name="duration" class="form-control" placeholder="Duration of project (hours)">
                         </div>
                         <button type="button" class="btn btn-primary btn-sm center-block"
                                 style="text-align: center; float:none"
