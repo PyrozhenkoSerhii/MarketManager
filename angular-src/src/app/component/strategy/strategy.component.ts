@@ -20,7 +20,7 @@ export class StrategyComponent implements OnInit {
     name: String;
     description: String;
     duration: String;
-    timeCompleted:String = '';
+    timeCompleted:String = '0';
 
     trackingPoint: String;
     initialData: String;
