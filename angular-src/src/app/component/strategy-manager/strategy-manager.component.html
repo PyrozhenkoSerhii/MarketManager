@@ -30,7 +30,7 @@
 
             <div class="row">
                 <div style="display: block;">
-                    <canvas baseChart width="800" height="250"
+                    <canvas baseChart width="800" height="400"
                             [datasets]="lineChartData"
                             [labels]="lineChartLabels"
                             [options]="lineChartOptions"
@@ -44,7 +44,9 @@
 
             <h4 align="center" style="font-family: Calibri">Parameters that were used in the strategy</h4>
             <div *ngFor="let parameter of parameters">
-                &#8226; {{parameter}}
+                <div class="paramBlock">
+                    &#8226; {{parameter}}
+                </div>
             </div>
         </div>
     </div>
