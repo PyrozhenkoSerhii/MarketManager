@@ -5,8 +5,8 @@
         <div class="row">
             <div class="col-md-3"></div>
             <div class="col-md-6">
-                <h1>Your strategy</h1>
-                <p class="lead">Here you can create a strategy for your projects</p>
+                <h1 style="text-align: center">Your strategy</h1>
+                <p style="text-align: center" class="lead">Here you can create a strategy for your projects</p>
 
                 <script src="strategy.component.ts"></script>
                 <br>
@@ -129,13 +129,15 @@
                             </div>
                         </div>
                         <div class="row">
-                            <button type="button" class="btn btn-primary btn-sm center-block"
-                                    style="text-align: center; float:none" (click)="addParameter()">+
-                            </button>
+                            <!--<button type="button" class="btn btn-primary btn-sm center-block"-->
+                                    <!--style="text-align: center; float:none" (click)="addParameter()">+-->
+                            <!--</button>-->
+                            <input type="submit" class="btn btn-primary btn-sm center-block"
+                                   style="text-align: center; float:none" value="Create">
                         </div>
 
                         <br>
-                        <h4 align="center" style="font-family: Calibri">Parameters that were used in the strategy</h4>
+                        <h4 align="center" style="font-family: Calibri">Parameters you've added:</h4>
                         <div *ngFor="let parameter of parametersArray">
                             <div class="paramBlock">
                                 <p>&#8226; {{parameter}}</p>
