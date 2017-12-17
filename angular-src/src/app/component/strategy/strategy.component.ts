@@ -58,6 +58,8 @@ export class StrategyComponent implements OnInit {
             this.isCreator = params['creator'] || false;
             if(this.isCreator){
                 this.createdProject = this.creator.getProject();
+            }else{
+                this.getProjects();
             }
         });
     }
@@ -75,6 +77,8 @@ export class StrategyComponent implements OnInit {
             this.isCreator = params['creator'] || false;
             if(this.isCreator){
                 this.createdProject = this.creator.getProject();
+            }else{
+                this.getProjects();
             }
         });
 

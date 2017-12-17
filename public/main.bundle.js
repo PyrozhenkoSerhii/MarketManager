@@ -787,7 +787,7 @@ exports = module.exports = __webpack_require__("../../../../css-loader/lib/css-b
 
 
 // module
-exports.push([module.i, ".strategiesBlock{\r\n    display: inline-block;\r\n    box-sizing: content-box;\r\n    float: left;\r\n    z-index: auto;\r\n    width: 20%;\r\n    height: 20%;\r\n    min-height: 60px;\r\n    position: static;\r\n    cursor: default;\r\n    opacity: 0.75;\r\n    margin: 40px;\r\n    padding: 10px 30px 10px 10px;\r\n    overflow: hidden;\r\n    border: 2px solid;\r\n    border-radius: 20px;\r\n    font: normal 13px/1 Calibri Serif;\r\n    color: rgba(29,56,135,1);\r\n    text-align: center;\r\n    text-overflow: ellipsis;\r\n    background: linear-gradient(180deg, rgb(146, 255, 255) 0, rgba(234,242,220,1) 100%);\r\n    background-repeat: repeat-x;\r\n    background-position: 50% 50%;\r\n    background-origin: padding-box;\r\n    background-clip: border-box;\r\n    background-size: auto auto;\r\n    box-shadow: 1px 1px 1px 0 rgba(0,0,0,0.3) ;\r\n    text-shadow: 0 0 9px rgba(155,154,226,1) ;\r\n    transition: none;\r\n    -webkit-transform: none;\r\n    transform: none;\r\n    -webkit-transform-origin: 50% 50% 0;\r\n    transform-origin: 50% 50% 0;\r\n}\r\n\r\n\r\n\r\n.infoBlock{\r\n    display: inline-block;\r\n    box-sizing: content-box;\r\n\r\n    z-index: auto;\r\n    width: 90%;\r\n    height:100%;\r\n    min-height: 400px;\r\n    position: static;\r\n    cursor: default;\r\n    opacity: 0.78;\r\n    margin: 11px;\r\n    padding: 20px;\r\n    overflow: hidden;\r\n    border: 2px solid;\r\n    border-radius: 10px;\r\n    font: normal 16px/1 Georgia, serif;\r\n    color: rgba(29,56,135,1);\r\n    text-align: left;\r\n    text-overflow: ellipsis;\r\n    background: linear-gradient(180deg, rgb(223, 255, 255) 0, rgba(234,242,220,1) 100%);\r\n    background-repeat: repeat-x;\r\n    background-position: 50% 50%;\r\n    background-origin: padding-box;\r\n    background-clip: border-box;\r\n    background-size: auto auto;\r\n    box-shadow: 1px 1px 1px 0 rgba(0,0,0,0.3) ;\r\n    text-shadow: 0 0 9px rgba(155,154,226,1) ;\r\n    transition: none;\r\n    -webkit-transform: none;\r\n    transform: none;\r\n    -webkit-transform-origin: 50% 50% 0;\r\n    transform-origin: 50% 50% 0;\r\n}", ""]);
+exports.push([module.i, ".strategiesBlock{\r\n    display: inline-block;\r\n    box-sizing: content-box;\r\n    float: left;\r\n    z-index: auto;\r\n    width: 25%;\r\n    height: 20%;\r\n    min-height: 60px;\r\n    position: static;\r\n    cursor: default;\r\n    opacity: 0.75;\r\n    margin: 40px;\r\n    padding: 10px 30px 10px 10px;\r\n    overflow: hidden;\r\n    border: 2px solid;\r\n    border-radius: 20px;\r\n    font: normal 13px/1 Calibri Serif;\r\n    color: rgba(29,56,135,1);\r\n    text-align: center;\r\n    text-overflow: ellipsis;\r\n    background: linear-gradient(180deg, rgb(146, 255, 255) 0, rgba(234,242,220,1) 100%);\r\n    background-repeat: repeat-x;\r\n    background-position: 50% 50%;\r\n    background-origin: padding-box;\r\n    background-clip: border-box;\r\n    background-size: auto auto;\r\n    box-shadow: 1px 1px 1px 0 rgba(0,0,0,0.3) ;\r\n    text-shadow: 0 0 9px rgba(155,154,226,1) ;\r\n    transition: none;\r\n    -webkit-transform: none;\r\n    transform: none;\r\n    -webkit-transform-origin: 50% 50% 0;\r\n    transform-origin: 50% 50% 0;\r\n}\r\n\r\n\r\n\r\n.infoBlock{\r\n    display: inline-block;\r\n    box-sizing: content-box;\r\n\r\n    z-index: auto;\r\n    width: 90%;\r\n    height:100%;\r\n    min-height: 400px;\r\n    position: static;\r\n    cursor: default;\r\n    opacity: 0.78;\r\n    margin: 11px;\r\n    padding: 20px;\r\n    overflow: hidden;\r\n    border: 2px solid;\r\n    border-radius: 10px;\r\n    font: normal 16px/1 Georgia, serif;\r\n    color: rgba(29,56,135,1);\r\n    text-align: left;\r\n    text-overflow: ellipsis;\r\n    background: linear-gradient(180deg, rgb(223, 255, 255) 0, rgba(234,242,220,1) 100%);\r\n    background-repeat: repeat-x;\r\n    background-position: 50% 50%;\r\n    background-origin: padding-box;\r\n    background-clip: border-box;\r\n    background-size: auto auto;\r\n    box-shadow: 1px 1px 1px 0 rgba(0,0,0,0.3) ;\r\n    text-shadow: 0 0 9px rgba(155,154,226,1) ;\r\n    transition: none;\r\n    -webkit-transform: none;\r\n    transform: none;\r\n    -webkit-transform-origin: 50% 50% 0;\r\n    transform-origin: 50% 50% 0;\r\n}", ""]);
 
 // exports
 
@@ -1271,6 +1271,9 @@ var StrategyComponent = (function () {
             if (_this.isCreator) {
                 _this.createdProject = _this.creator.getProject();
             }
+            else {
+                _this.getProjects();
+            }
         });
     }
     StrategyComponent.prototype.ngOnInit = function () {
@@ -1285,6 +1288,9 @@ var StrategyComponent = (function () {
             _this.isCreator = params['creator'] || false;
             if (_this.isCreator) {
                 _this.createdProject = _this.creator.getProject();
+            }
+            else {
+                _this.getProjects();
             }
         });
     };
