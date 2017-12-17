@@ -29,7 +29,7 @@
                             </div>
                             <div *ngIf="!isCreator">
                                 <select class="form-control" #curProject
-                                        (change)="changeCurrentProject(curProject.value)" >
+                                        (change)="changeCurrentProject(curProject.value)">
                                     <option>Choose project</option>
                                     <option *ngFor="let project of projects" [value]="project.name">{{project.name}}
                                     </option>
@@ -39,13 +39,16 @@
                         </div>
 
                         <div class="form-group">
-                            <input type="text" [(ngModel)]="name" name="name" class="form-control" placeholder="Name of strategy" >
+                            <input type="text" [(ngModel)]="name" name="name" class="form-control"
+                                   placeholder="Name of strategy">
                         </div>
                         <div class="form-group">
-                            <input type="text" [(ngModel)]="description" name="description" class="form-control" placeholder="Description of project">
+                            <input type="text" [(ngModel)]="description" name="description" class="form-control"
+                                   placeholder="Description of project">
                         </div>
                         <div class="form-group">
-                            <input type="text" [(ngModel)]="duration" name="duration" class="form-control" placeholder="Duration of project (hours)">
+                            <input type="text" [(ngModel)]="duration" name="duration" class="form-control"
+                                   placeholder="Duration of project (hours)">
                         </div>
                         <button type="button" class="btn btn-primary btn-sm center-block"
                                 style="text-align: center; float:none"
@@ -114,6 +117,7 @@
                                        class="form-control">
                             </div>
                         </div>
+                        <br>
                         <div class="row">
                             <div class="col-4">
                                 <h6>Value of parameter: </h6>
@@ -123,12 +127,13 @@
                                        name="parameterValue"
                                        class="form-control">
                             </div>
-
-                                <button type="button" class="btn btn-primary btn-sm center-block"
-                                        style="text-align: center; float:none" (click)="addParameter()">+
-                                </button>
-
                         </div>
+                        <div class="row">
+                            <button type="button" class="btn btn-primary btn-sm center-block"
+                                    style="text-align: center; float:none" (click)="addParameter()">+
+                            </button>
+                        </div>
+
                         <table>
                             <tr>
                                 <th><h5>Parameters:</h5></th>
