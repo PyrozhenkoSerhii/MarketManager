@@ -20,7 +20,7 @@
         <entry file="file://$PROJECT_DIR$/angular-src/src/app/component/strategy/strategy.component.css">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="102">
-              <caret line="64" column="27" lean-forward="true" selection-start-line="64" selection-start-column="27" selection-end-line="64" selection-end-column="27" />
+              <caret line="64" column="27" lean-forward="false" selection-start-line="64" selection-start-column="27" selection-end-line="64" selection-end-column="27" />
               <folding>
                 <marker date="1513538418681" expanded="false" signature="1820:2066" ph="data" />
               </folding>
@@ -43,8 +43,8 @@
       <file leaf-file-name="strategy.component.html" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/angular-src/src/app/component/strategy/strategy.component.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="398">
-              <caret line="136" column="0" lean-forward="true" selection-start-line="136" selection-start-column="0" selection-end-line="136" selection-end-column="0" />
+            <state relative-caret-position="279">
+              <caret line="135" column="0" lean-forward="true" selection-start-line="135" selection-start-column="0" selection-end-line="135" selection-end-column="0" />
               <folding>
                 <element signature="n#style#0;n#h1#0;n#div#1;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#p#0;n#div#1;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
@@ -549,12 +549,12 @@
       <workItem from="1513339977257" duration="5375000" />
       <workItem from="1513359741327" duration="2042000" />
       <workItem from="1513443682900" duration="14775000" />
-      <workItem from="1513533816365" duration="4637000" />
+      <workItem from="1513533816365" duration="4843000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="235608000" />
+    <option name="totallyTimeSpent" value="235814000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
@@ -980,7 +980,7 @@
     <entry file="file://$PROJECT_DIR$/angular-src/src/app/component/strategy/strategy.component.css">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="102">
-          <caret line="64" column="27" lean-forward="true" selection-start-line="64" selection-start-column="27" selection-end-line="64" selection-end-column="27" />
+          <caret line="64" column="27" lean-forward="false" selection-start-line="64" selection-start-column="27" selection-end-line="64" selection-end-column="27" />
           <folding>
             <marker date="1513538418681" expanded="false" signature="1820:2066" ph="data" />
           </folding>
@@ -999,8 +999,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/angular-src/src/app/component/strategy/strategy.component.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="398">
-          <caret line="136" column="0" lean-forward="true" selection-start-line="136" selection-start-column="0" selection-end-line="136" selection-end-column="0" />
+        <state relative-caret-position="279">
+          <caret line="135" column="0" lean-forward="true" selection-start-line="135" selection-start-column="0" selection-end-line="135" selection-end-column="0" />
           <folding>
             <element signature="n#style#0;n#h1#0;n#div#1;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#p#0;n#div#1;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
