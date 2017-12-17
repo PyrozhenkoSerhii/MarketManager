@@ -46,15 +46,8 @@ export class StrategyComponent implements OnInit {
     //parameters
     parameterName = '';
     parameterValue = '';
-
     parameters: Object = {};
-
     parametersArray = [];
-
-
-
-
-
 
     constructor(private creator: CreatorService,
                 private flashMessage: FlashMessagesService,
@@ -63,6 +56,9 @@ export class StrategyComponent implements OnInit {
                 private route:ActivatedRoute) {
         this.route.queryParams.subscribe(params=>{
             this.isCreator = params['creator'] || false;
+            if(this.isCreator){
+                this.createdProject = this.creator.getProject();
+            }
         });
     }
 
@@ -77,6 +73,9 @@ export class StrategyComponent implements OnInit {
 
         this.route.queryParams.subscribe(params=>{
             this.isCreator = params['creator'] || false;
+            if(this.isCreator){
+                this.createdProject = this.creator.getProject();
+            }
         });
 
 
@@ -192,7 +191,6 @@ export class StrategyComponent implements OnInit {
         this.type = value;
     }
 
-
     changeIoTDevices(value) {
         this.iotTech = value;
     }
@@ -206,10 +204,18 @@ export class StrategyComponent implements OnInit {
 
         this.parameterName = '';
         this.parameterValue = '';
+    }
 
-        // for(let i in this.parameters){
-        //    console.log(i);
-        //    console.log(this.parameters[i]);
-        // }
+    getProjects() {
+        this.creator.getProjectsByUser().subscribe(data => {
+            if (data.success) {
+                this.projects = data.projects;
+            } else {
+                this.flashMessage.show('Something went wrong while getting the projects', {
+                    cssClass: 'alert-danger',
+                    timeout: 3000
+                });
+            }
+        });
     }
 }
