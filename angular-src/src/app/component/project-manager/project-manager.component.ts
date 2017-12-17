@@ -45,6 +45,7 @@ export class ProjectManagerComponent implements OnInit {
         this.creator.getStrategyByProject(this.project.name).subscribe(data => {
             if (data.success) {
                 this.strategies = data.strategies;
+                console.log(this.strategies);
 
             } else {
                 this.flashMessage.show('Something went wrong while getting the strategies', {
