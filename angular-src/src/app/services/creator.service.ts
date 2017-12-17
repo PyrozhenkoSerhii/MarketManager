@@ -59,7 +59,7 @@ export class CreatorService {
         let headers = new Headers();
         let projectName = {"project": project};
         headers.append('Content-Type', 'application/json');
-        return this.http.post('getStrategiesByProjectId', projectName, {headers: headers})
+        return this.http.post('strategies/getStrategiesByProjectId', projectName, {headers: headers})
             .map(res => res.json());
     }
 
