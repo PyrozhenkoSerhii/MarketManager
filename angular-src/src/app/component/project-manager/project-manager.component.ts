@@ -20,10 +20,11 @@ export class ProjectManagerComponent implements OnInit {
                 private router: Router) {
         this.project = this.creator.getProjectInfo();
         this.getStrategies();
+        console.log('constr');
     }
 
     ngOnInit() {
-
+        this.getStrategies();
     }
 
     getStatusProject(status) {
