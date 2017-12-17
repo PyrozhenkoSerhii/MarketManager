@@ -834,8 +834,10 @@ var ProjectManagerComponent = (function () {
         this.router = router;
         this.project = this.creator.getProjectInfo();
         this.getStrategies();
+        console.log('constr');
     }
     ProjectManagerComponent.prototype.ngOnInit = function () {
+        this.getStrategies();
     };
     ProjectManagerComponent.prototype.getStatusProject = function (status) {
         if (status) {
@@ -851,9 +853,11 @@ var ProjectManagerComponent = (function () {
     };
     ProjectManagerComponent.prototype.getStrategies = function () {
         var _this = this;
+        console.log('search running...');
         this.creator.getStrategyByProject(this.project.name).subscribe(function (data) {
             if (data.success) {
                 _this.strategies = data.strategies;
+                console.log('search ended');
             }
             else {
                 _this.flashMessage.show('Something went wrong while getting the strategies', {
@@ -1638,7 +1642,7 @@ var CreatorService = (function () {
         var headers = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["Headers"]();
         var projectName = { "project": project };
         headers.append('Content-Type', 'application/json');
-        return this.http.post('getStrategiesByProjectId', projectName, { headers: headers })
+        return this.http.post('strategies/getStrategiesByProjectId', projectName, { headers: headers })
             .map(function (res) { return res.json(); });
     };
     CreatorService.prototype.getStrategyByUser = function () {
