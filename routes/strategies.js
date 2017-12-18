@@ -120,11 +120,10 @@ router.post('/changeStatus', function (req, res, next) {
 });
 
 router.post('/changeStatusAndSetStrategy', function (req, res, next) {
-    var strategyChanger = [req.body.strategy.id, req.body.changeTo];
+    var strategyChanger = [req.body.strategy._id, req.body.changeTo];
     var changedTo = req.body.changeTo;
     var strategy = req.body.strategy;
 
-    console.log(strategyChanger);
     Strategy.changeStatus(strategyChanger, function (err, changed) {
         if (err) {
             res.json({success: false, msg: 'Failed to change the status of the strategy'})
