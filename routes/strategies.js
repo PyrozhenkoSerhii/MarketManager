@@ -112,9 +112,8 @@ router.post('/changeStatus', function (req, res, next) {
     Strategy.changeStatus(strategyChanger, function (err, changed) {
         if (err) {
             res.json({success: false, msg: 'Failed to change the status of the strategy'})
-        } else {
-            res.json({success: true, msg: 'Status was changed'})
         }
+        if(changed) res.json({success: true, msg: 'Status was changed'})
     })
 });
 

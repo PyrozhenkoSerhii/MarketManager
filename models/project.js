@@ -84,8 +84,8 @@ module.exports.changeStatus = function (projectChanger, callback) {
 
         db.collection("projects").updateOne(myquery, newvalues, function(err, res) {
             if (err) throw err;
+            callback(null, true);
             db.close();
-            return;
         });
     });
 

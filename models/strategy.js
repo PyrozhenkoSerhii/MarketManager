@@ -124,8 +124,7 @@ module.exports.changeStatus = function (strategyChanger, callback) {
 
         db.collection("strategies").updateOne(myquery, newvalues, function(err, res) {
             if (err) throw err;
-
-            callback(null, true)
+            callback(null, true);
             db.close();
         });
     });
@@ -139,6 +138,7 @@ module.exports.changeProgress = function (strategyChanger, callback) {
 
         db.collection("strategies").updateOne(myquery, newvalues, function(err, res) {
             if (err) throw err;
+            callback(null,true);
             db.close();
         });
     });

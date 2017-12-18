@@ -63,7 +63,10 @@ router.post('/changeStatus', function (req, res, next) {
     var projectChanger = [req.body.project, req.body.changeTo];
 
     Project.changeStatus(projectChanger, function (err, changed) {
-        res.json({success: true, msg: 'Changed status of project'})
+        if (err) {
+            res.json({success: false, msg: 'Failed to change the status of the project'})
+        }
+        if(changed) res.json({success: true, msg: 'Status was changed'})
     })
 });
 
