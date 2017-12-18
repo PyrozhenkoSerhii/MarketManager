@@ -124,9 +124,9 @@ router.post('/changeProgress', function (req, res, next) {
     Strategy.changeProgress(strategyChanger, function (err, changed) {
         if (err) {
             res.json({success: false, msg: 'Failed to change the progress of the strategy'})
-        } else {
-            res.json({success: true, msg: 'Progress was changed'})
         }
+
+        if(changed) res.json({success: true, msg: 'Failed to change the progress of the strategy'})
     })
 });
 
