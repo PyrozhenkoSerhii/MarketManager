@@ -43,12 +43,9 @@ export class ProjectManagerComponent implements OnInit {
     }
 
     getStrategies() {
-        console.log('search running...');
         this.creator.getStrategyByProject(this.project.name).subscribe(data => {
             if (data.success) {
                 this.strategies = data.strategies;
-                console.log('search ended');
-
             } else {
                 this.flashMessage.show('Something went wrong while getting the strategies', {
                     cssClass: 'alert-danger',
@@ -62,8 +59,8 @@ export class ProjectManagerComponent implements OnInit {
     changeProjectStatus(project, status) {
         this.creator.changeProjectStatus(project, status).subscribe(data => {
             if (data.success) {
-                console.log("123");
                 this.project.isActive = !(this.project.isActive);
+                this.flashMessage.show('Status was changed', {cssClass: 'alert-success', timeout: 3000});
             } else {
                 this.flashMessage.show('Something went wrong while changing the status', {
                     cssClass: 'alert-danger',
@@ -73,25 +70,13 @@ export class ProjectManagerComponent implements OnInit {
         })
     }
 
-    changeStrategyStatus(strategy, status) {
-        this.creator.changeStrategyStatus(strategy, status).subscribe(data => {
-            if (data.success) {
-                console.log(data);
-            } else {
-                this.flashMessage.show('Something went wrong while changing the status', {
-                    cssClass: 'alert-danger',
-                    timeout: 3000
-                });
-            }
-        })
-    }
 
     strategyInfo(strategy) {
         this.creator.sendStrategyInfo(strategy);
         this.router.navigate(['/strategy-manager']);
     }
 
-    getCompletedPart(){
+    getCompletedPart() {
         return "25%";
 
     }

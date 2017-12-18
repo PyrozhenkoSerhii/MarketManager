@@ -23,7 +23,7 @@ export class ProfileComponent implements OnInit {
                 private router: Router,
                 private creator: CreatorService,
                 private flashMessage: FlashMessagesService,
-                private activatedRoute:ActivatedRoute) {
+                private activatedRoute: ActivatedRoute) {
         this.getProjects();
         this.getStrategies();
         this.createDummyProgress();
@@ -79,9 +79,9 @@ export class ProfileComponent implements OnInit {
     deleteProject(project) {
 
         this.creator.deleteProject(project).subscribe(data => {
-            //why it is not working?
             if (data.success) {
                 this.flashMessage.show('Project was deleted', {cssClass: 'alert-danger', timeout: 3000});
+                location.reload();
             } else {
                 this.flashMessage.show('Something went wrong while deleting the project', {
                     cssClass: 'alert-danger',
@@ -90,10 +90,8 @@ export class ProfileComponent implements OnInit {
             }
         });
 
-        this.flashMessage.show('Project was deleted', {cssClass: 'alert-success', timeout: 3000});
-        //this.router.navigate(['/profile']);
-        location.reload();
-        //this.getProjects();
+        // this.flashMessage.show('Project was deleted', {cssClass: 'alert-success', timeout: 3000});
+        // location.reload();
     }
 
     deleteStrategy(strategy) {
@@ -101,6 +99,7 @@ export class ProfileComponent implements OnInit {
             //why it is not working?
             if (data.success) {
                 this.flashMessage.show('Strategy was deleted', {cssClass: 'alert-danger', timeout: 3000});
+                location.reload();
             } else {
                 this.flashMessage.show('Something went wrong while deleting the strategy', {
                     cssClass: 'alert-danger',
@@ -109,8 +108,8 @@ export class ProfileComponent implements OnInit {
             }
         });
 
-        this.flashMessage.show('Strategy was deleted', {cssClass: 'alert-success', timeout: 3000});
-        location.reload();
+        // this.flashMessage.show('Strategy was deleted', {cssClass: 'alert-success', timeout: 3000});
+        // location.reload();
     }
 
     getStatus(status) {
@@ -125,13 +124,8 @@ export class ProfileComponent implements OnInit {
         return this.creator.getDateForProgress(date);
     }
 
-    sendProjectData(project) {
-        //todo sending of a current project and getting it from the project manager
-    }
-
     createDummyProgress() {
         let dummyProgress = setTimeout(() => this.dummyProgressFunc(), 1000);
-        //let dummyProgress = setInterval(()=>this.dummyProgressFunc(),5000);
     }
 
     dummyProgressFunc() {

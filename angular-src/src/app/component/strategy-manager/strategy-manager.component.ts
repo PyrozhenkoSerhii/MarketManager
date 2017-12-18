@@ -2,9 +2,7 @@ import {Component, OnInit} from '@angular/core';
 import {CreatorService} from "../../services/creator.service"
 import {FlashMessagesService} from "angular2-flash-messages";
 import {Router} from "@angular/router";
-import {Project} from "../../class/Project";
 import {Strategy} from "../../class/Strategy";
-import NumberFormat = Intl.NumberFormat;
 
 @Component({
     selector: 'app-strategy-manager',
@@ -15,7 +13,7 @@ export class StrategyManagerComponent implements OnInit {
     strategy: Strategy;
     progressArray: Number[] = this.diagramBuilderData();
     intervalArray: String[] = this.diagramBuilderInterval();
-    label:String = this.diagramBuilderLabel();
+    label: String = this.diagramBuilderLabel();
     parameters = [];
 
 
@@ -34,6 +32,7 @@ export class StrategyManagerComponent implements OnInit {
         this.creator.changeStrategyStatus(strategy, status).subscribe(data => {
             if (data.success) {
                 this.strategy.isActive = !(this.strategy.isActive);
+                this.flashMessage.show('Status was changed', {cssClass: 'alert-success', timeout: 3000});
             } else {
                 this.flashMessage.show('Something went wrong while changing the status', {
                     cssClass: 'alert-danger',
@@ -43,10 +42,11 @@ export class StrategyManagerComponent implements OnInit {
         })
     }
 
-    changeStrategyStatusAndSetProgress(strategy,status){
+    changeStrategyStatusAndSetProgress(strategy, status) {
         this.creator.changeStrategyStatusAndSetProgress(strategy, status).subscribe(data => {
             if (data.success) {
                 this.strategy.isActive = !(this.strategy.isActive);
+                this.flashMessage.show('Status was changed', {cssClass: 'alert-success', timeout: 3000});
             } else {
                 this.flashMessage.show('Something went wrong while changing the status', {
                     cssClass: 'alert-danger',
@@ -78,38 +78,33 @@ export class StrategyManagerComponent implements OnInit {
         return this.strategy.progress['sales'];
     }
 
-    getCurrentProgress(){
-
-    }
-
     diagramBuilderData() {
         let dataArray = [];
         this.strategy = this.creator.getStrategyInfo();
-        for(let name in this.strategy.progress){
+        for (let name in this.strategy.progress) {
             dataArray.push(this.strategy.progress[name]);
         }
         return dataArray;
     }
 
-    diagramBuilderInterval(){
+    diagramBuilderInterval() {
         let intervalArray = [];
         this.strategy = this.creator.getStrategyInfo();
-        for(let name in this.strategy.progress){
+        for (let name in this.strategy.progress) {
             intervalArray.push(name);
         }
         return intervalArray;
     }
 
-    diagramBuilderLabel(){
+    diagramBuilderLabel() {
         this.strategy = this.creator.getStrategyInfo();
         return this.strategy.trackingPoint;
 
     }
 
-
-    getParameters(){
-        for(let i in this.strategy.parameters){
-            this.parameters.push(i.concat(" : ",this.strategy.parameters[i]));
+    getParameters() {
+        for (let i in this.strategy.parameters) {
+            this.parameters.push(i.concat(" : ", this.strategy.parameters[i]));
         }
     }
 

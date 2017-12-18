@@ -69,6 +69,7 @@ module.exports.deleteProject = function (project, callback) {
         var query = {_id: ObjectId(project)};
         db.collection("projects").deleteOne(query, function (err, obj) {
             if (err) throw err;
+            callback(null, true);
             db.close();
         });
     });

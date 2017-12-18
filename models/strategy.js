@@ -106,6 +106,7 @@ module.exports.deleteStrategy = function (strategy, callback) {
         var query = {_id: ObjectId(strategy)};
         db.collection("strategies").deleteOne(query, function (err, obj) {
             if (err) throw err;
+            callback(null, true);
             db.close();
         });
     });
