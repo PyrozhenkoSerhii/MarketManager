@@ -871,7 +871,8 @@ var ProjectManagerComponent = (function () {
         var _this = this;
         this.creator.changeProjectStatus(project, status).subscribe(function (data) {
             if (data.success) {
-                console.log(data);
+                console.log("123");
+                _this.project.isActive = !(_this.project.isActive);
             }
             else {
                 _this.flashMessage.show('Something went wrong while changing the status', {

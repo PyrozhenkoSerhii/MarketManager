@@ -66,7 +66,11 @@ router.post('/changeStatus', function (req, res, next) {
         if (err) {
             res.json({success: false, msg: 'Failed to change the status of the project'})
         }
-        if(changed) res.json({success: true, msg: 'Status was changed'})
+        if(changed) {
+            res.json({success: true, msg: 'Status was changed'})
+            console.log('here will be func');
+        }
+
     })
 });
 
