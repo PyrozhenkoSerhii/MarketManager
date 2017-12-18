@@ -131,8 +131,9 @@ router.post('/changeStatusAndSetStrategy', function (req, res, next) {
         if(changed) {
             res.json({success: true, msg: 'Status was changed'});
             if(changedTo){
+                var date = new Date(year, month, day, hour, minute);
                 var testValue = +strategy.initialData + Math.floor(Math.random() * (100 - 10)) + "";
-                var testName = this.getDateForProgress(Date.now()) + "";
+                var testName = date + "";
                 strategy.progress[testName.toString()] = testValue;
 
                 var strategyChanger = [strategy, strategy.progress];
