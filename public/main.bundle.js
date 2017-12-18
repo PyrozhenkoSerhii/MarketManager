@@ -690,9 +690,9 @@ var ProfileComponent = (function () {
     ProfileComponent.prototype.deleteProject = function (project) {
         var _this = this;
         this.creator.deleteProject(project).subscribe(function (data) {
-            //why it is not working?
             if (data.success) {
                 _this.flashMessage.show('Project was deleted', { cssClass: 'alert-danger', timeout: 3000 });
+                location.reload();
             }
             else {
                 _this.flashMessage.show('Something went wrong while deleting the project', {
@@ -701,10 +701,8 @@ var ProfileComponent = (function () {
                 });
             }
         });
-        this.flashMessage.show('Project was deleted', { cssClass: 'alert-success', timeout: 3000 });
-        //this.router.navigate(['/profile']);
-        location.reload();
-        //this.getProjects();
+        // this.flashMessage.show('Project was deleted', {cssClass: 'alert-success', timeout: 3000});
+        // location.reload();
     };
     ProfileComponent.prototype.deleteStrategy = function (strategy) {
         var _this = this;
@@ -712,6 +710,7 @@ var ProfileComponent = (function () {
             //why it is not working?
             if (data.success) {
                 _this.flashMessage.show('Strategy was deleted', { cssClass: 'alert-danger', timeout: 3000 });
+                location.reload();
             }
             else {
                 _this.flashMessage.show('Something went wrong while deleting the strategy', {
@@ -720,8 +719,8 @@ var ProfileComponent = (function () {
                 });
             }
         });
-        this.flashMessage.show('Strategy was deleted', { cssClass: 'alert-success', timeout: 3000 });
-        location.reload();
+        // this.flashMessage.show('Strategy was deleted', {cssClass: 'alert-success', timeout: 3000});
+        // location.reload();
     };
     ProfileComponent.prototype.getStatus = function (status) {
         return this.creator.getStatus(status);
@@ -732,13 +731,9 @@ var ProfileComponent = (function () {
     ProfileComponent.prototype.getDateForProgress = function (date) {
         return this.creator.getDateForProgress(date);
     };
-    ProfileComponent.prototype.sendProjectData = function (project) {
-        //todo sending of a current project and getting it from the project manager
-    };
     ProfileComponent.prototype.createDummyProgress = function () {
         var _this = this;
         var dummyProgress = setTimeout(function () { return _this.dummyProgressFunc(); }, 1000);
-        //let dummyProgress = setInterval(()=>this.dummyProgressFunc(),5000);
     };
     ProfileComponent.prototype.dummyProgressFunc = function () {
         var _this = this;
@@ -853,11 +848,9 @@ var ProjectManagerComponent = (function () {
     };
     ProjectManagerComponent.prototype.getStrategies = function () {
         var _this = this;
-        console.log('search running...');
         this.creator.getStrategyByProject(this.project.name).subscribe(function (data) {
             if (data.success) {
                 _this.strategies = data.strategies;
-                console.log('search ended');
             }
             else {
                 _this.flashMessage.show('Something went wrong while getting the strategies', {
@@ -871,22 +864,8 @@ var ProjectManagerComponent = (function () {
         var _this = this;
         this.creator.changeProjectStatus(project, status).subscribe(function (data) {
             if (data.success) {
-                console.log("123");
                 _this.project.isActive = !(_this.project.isActive);
-            }
-            else {
-                _this.flashMessage.show('Something went wrong while changing the status', {
-                    cssClass: 'alert-danger',
-                    timeout: 3000
-                });
-            }
-        });
-    };
-    ProjectManagerComponent.prototype.changeStrategyStatus = function (strategy, status) {
-        var _this = this;
-        this.creator.changeStrategyStatus(strategy, status).subscribe(function (data) {
-            if (data.success) {
-                console.log(data);
+                _this.flashMessage.show('Status was changed', { cssClass: 'alert-success', timeout: 3000 });
             }
             else {
                 _this.flashMessage.show('Something went wrong while changing the status', {
@@ -1128,6 +1107,7 @@ var StrategyManagerComponent = (function () {
         this.creator.changeStrategyStatus(strategy, status).subscribe(function (data) {
             if (data.success) {
                 _this.strategy.isActive = !(_this.strategy.isActive);
+                _this.flashMessage.show('Status was changed', { cssClass: 'alert-success', timeout: 3000 });
             }
             else {
                 _this.flashMessage.show('Something went wrong while changing the status', {
@@ -1142,6 +1122,7 @@ var StrategyManagerComponent = (function () {
         this.creator.changeStrategyStatusAndSetProgress(strategy, status).subscribe(function (data) {
             if (data.success) {
                 _this.strategy.isActive = !(_this.strategy.isActive);
+                _this.flashMessage.show('Status was changed', { cssClass: 'alert-success', timeout: 3000 });
             }
             else {
                 _this.flashMessage.show('Something went wrong while changing the status', {
@@ -1168,8 +1149,6 @@ var StrategyManagerComponent = (function () {
     };
     StrategyManagerComponent.prototype.getCurrentData = function () {
         return this.strategy.progress['sales'];
-    };
-    StrategyManagerComponent.prototype.getCurrentProgress = function () {
     };
     StrategyManagerComponent.prototype.diagramBuilderData = function () {
         var dataArray = [];
