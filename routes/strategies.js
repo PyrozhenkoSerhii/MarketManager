@@ -5,6 +5,8 @@ const jwt = require('jsonwebtoken');
 const config = require('../config/database');
 const Strategy = require('../models/strategy');
 
+var isActive = false;
+
 router.post('/saveStrategy',function(req,res,next){
     var newStrategy = new Strategy({
         name:req.body.name,
@@ -129,24 +131,15 @@ router.post('/changeStatusAndSetStrategy', function (req, res, next) {
             res.json({success: false, msg: 'Failed to change the status of the strategy'})
         }
         if(changed) {
-            //res.json({success: true, msg: 'Status was changed'});
+            res.json({success: true, msg: 'Status was changed'});
             if(changedTo){
-                var date = new Date().toISOString().replace(/T/, ' ').replace(/\..+/, '');
-                var testValue = +strategy.initialData + Math.floor(Math.random() * (100 - 10)) + "";
-                var testName = date + "";
-                strategy.progress[testName.toString()] = testValue;
-
-                var strategyChanger = [strategy, strategy.progress];
-                //console.log(strategyChanger);
-                Strategy.changeProgress(strategyChanger, function (err, changed) {
-                    if (err) {
-                        res.json({success: false, msg: 'Failed to change the progress of the strategy'})
-                    }
-                    if (changed) {
-                        res.json({success: true, msg: 'Failed to change the progress of the strategy'})
-
-                    }
-                })
+                isActive = true;
+                while(isActive){
+                    writeProgress(strategy);
+                    setInterval(writeProgress(strategy),600000);
+                }
+            }else {
+                isActive = false;
             }
         }
     })
@@ -167,5 +160,15 @@ router.post('/changeProgress', function (req, res, next) {
 
     })
 });
+
+function writeProgress(strategy) {
+    var date = new Date().toISOString().replace(/T/, ' ').replace(/\..+/, '');
+    var testValue = +strategy.initialData + Math.floor(Math.random() * (100 - 10)) + "";
+    var testName = date + "";
+    strategy.progress[testName.toString()] = testValue;
+
+    var strategyChanger = [strategy, strategy.progress];
+    Strategy.writeProgress(strategyChanger);
+}
 
 module.exports = router;
