@@ -129,7 +129,7 @@ router.post('/changeStatusAndSetStrategy', function (req, res, next) {
             res.json({success: false, msg: 'Failed to change the status of the strategy'})
         }
         if(changed) {
-            res.json({success: true, msg: 'Status was changed'});
+            //res.json({success: true, msg: 'Status was changed'});
             if(changedTo){
                 var date = new Date().toISOString().replace(/T/, ' ').replace(/\..+/, '');
                 var testValue = +strategy.initialData + Math.floor(Math.random() * (100 - 10)) + "";
@@ -142,7 +142,6 @@ router.post('/changeStatusAndSetStrategy', function (req, res, next) {
                     if (err) {
                         res.json({success: false, msg: 'Failed to change the progress of the strategy'})
                     }
-
                     if (changed) {
                         res.json({success: true, msg: 'Failed to change the progress of the strategy'})
 
