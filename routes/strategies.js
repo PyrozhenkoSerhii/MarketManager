@@ -124,6 +124,7 @@ router.post('/changeStatusAndSetStrategy', function (req, res, next) {
     var changedTo = req.body.changeTo;
     var strategy = req.body.strategy;
 
+    console.log(strategyChanger);
     Strategy.changeStatus(strategyChanger, function (err, changed) {
         if (err) {
             res.json({success: false, msg: 'Failed to change the status of the strategy'})
@@ -137,7 +138,7 @@ router.post('/changeStatusAndSetStrategy', function (req, res, next) {
                 strategy.progress[testName.toString()] = testValue;
 
                 var strategyChanger = [strategy, strategy.progress];
-                console.log(strategyChanger);
+                //console.log(strategyChanger);
                 Strategy.changeProgress(strategyChanger, function (err, changed) {
                     if (err) {
                         res.json({success: false, msg: 'Failed to change the progress of the strategy'})
