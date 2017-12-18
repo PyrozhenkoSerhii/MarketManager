@@ -33,7 +33,7 @@ export class StrategyManagerComponent implements OnInit {
     changeStrategyStatus(strategy, status) {
         this.creator.changeStrategyStatus(strategy, status).subscribe(data => {
             if (data.success) {
-                console.log(data);
+                this.strategy.isActive = !(this.strategy.isActive);
             } else {
                 this.flashMessage.show('Something went wrong while changing the status', {
                     cssClass: 'alert-danger',
@@ -63,6 +63,10 @@ export class StrategyManagerComponent implements OnInit {
 
     getCurrentData() {
         return this.strategy.progress['sales'];
+    }
+
+    getCurrentProgress(){
+
     }
 
     diagramBuilderData() {
