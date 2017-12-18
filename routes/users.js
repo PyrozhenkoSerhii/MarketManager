@@ -5,11 +5,8 @@ const jwt = require('jsonwebtoken');
 const config = require('../config/database');
 const User = require('../models/user');
 
-//register
 router.post('/register',function(req,res,next){
-    console.log(req.body);
-    // noinspection JSAnnotator
-    let newUser = new User({
+    var newUser = new User({
         name:req.body.name,
         email:req.body.email,
         username:req.body.username,
@@ -26,10 +23,7 @@ router.post('/register',function(req,res,next){
     });
 });
 
-//authenticate
 router.post('/authenticate',function(req,res,next){
-    //console.log(req.body);
-
     const username = req.body.username;
     const password = req.body.password;
 
@@ -60,13 +54,8 @@ router.post('/authenticate',function(req,res,next){
     });
 });
 
-//profile
 router.get('/profile', passport.authenticate('jwt', {session:false}), function(req, res, next){
     res.json({user: req.user});
 });
-
-
-//currentUser
-router.get('/currentUser')
 
 module.exports = router;

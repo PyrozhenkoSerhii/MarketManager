@@ -5,7 +5,6 @@ const jwt = require('jsonwebtoken');
 const config = require('../config/database');
 const Strategy = require('../models/strategy');
 
-//save
 router.post('/saveStrategy',function(req,res,next){
     var newStrategy = new Strategy({
         name:req.body.name,
@@ -33,7 +32,6 @@ router.post('/saveStrategy',function(req,res,next){
         }
     });
 });
-
 
 router.post('/getStrategiesByUserId',function (req,res,next) {
     var user = req.body.user;
@@ -108,12 +106,49 @@ router.post('/deleteStrategy',function (req,res,next) {
 
 router.post('/changeStatus', function (req, res, next) {
     var strategyChanger = [req.body.strategy, req.body.changeTo];
+    var changedTo = req.body.changeTo;
+    var strategy = req.body.strategy;
 
     Strategy.changeStatus(strategyChanger, function (err, changed) {
         if (err) {
             res.json({success: false, msg: 'Failed to change the status of the strategy'})
         }
-        if(changed) res.json({success: true, msg: 'Status was changed'})
+        if(changed) {
+            res.json({success: true, msg: 'Status was changed'});
+        }
+    })
+});
+
+router.post('/changeStatusAndSetStrategy', function (req, res, next) {
+    var strategyChanger = [req.body.strategy.id, req.body.changeTo];
+    var changedTo = req.body.changeTo;
+    var strategy = req.body.strategy;
+
+    Strategy.changeStatus(strategyChanger, function (err, changed) {
+        if (err) {
+            res.json({success: false, msg: 'Failed to change the status of the strategy'})
+        }
+        if(changed) {
+            res.json({success: true, msg: 'Status was changed'});
+            if(changedTo){
+                var testValue = +strategy.initialData + Math.floor(Math.random() * (100 - 10)) + "";
+                var testName = this.getDateForProgress(Date.now()) + "";
+                strategy.progress[testName.toString()] = testValue;
+
+                var strategyChanger = [strategy, strategy.progress];
+                console.log(strategyChanger);
+                Strategy.changeProgress(strategyChanger, function (err, changed) {
+                    if (err) {
+                        res.json({success: false, msg: 'Failed to change the progress of the strategy'})
+                    }
+
+                    if (changed) {
+                        res.json({success: true, msg: 'Failed to change the progress of the strategy'})
+
+                    }
+                })
+            }
+        }
     })
 });
 
@@ -125,9 +160,12 @@ router.post('/changeProgress', function (req, res, next) {
             res.json({success: false, msg: 'Failed to change the progress of the strategy'})
         }
 
-        if(changed) res.json({success: true, msg: 'Failed to change the progress of the strategy'})
+        if(changed){
+            res.json({success: true, msg: 'Failed to change the progress of the strategy'})
+
+        }
+
     })
 });
-
 
 module.exports = router;

@@ -10,7 +10,7 @@
                 <h6>Type of strategy: </h6> {{strategy.type}}<p></p>
                 <h6>Status: </h6> {{getStatusStrategy(strategy.isActive)}}!
                 <button type="button" class="btn btn-warning btn-sm"
-                        (click)="changeStrategyStatus(strategy._id,strategy.isActive)">
+                        (click)="changeStrategyStatusAndSetProgress(strategy,strategy.isActive)">
                     Change
                 </button>
                 <h6>Duration: </h6> {{strategy.duration}}hours <p></p>

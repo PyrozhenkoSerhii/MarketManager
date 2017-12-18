@@ -107,6 +107,15 @@ export class CreatorService {
             .map(res => res.json());
     }
 
+
+    changeStrategyStatusAndSetProgress(strategy, status){
+        let headers = new Headers();
+        let strategyChanger = {"strategy": strategy, "changeTo": !status};
+        headers.append('Content-Type', 'application/json');
+        return this.http.post('strategies/changeStatusAndSetStrategy', strategyChanger, {headers: headers})
+            .map(res => res.json());
+    }
+
     //Manager
     sendProjectInfo(project) {
         this.project = project;

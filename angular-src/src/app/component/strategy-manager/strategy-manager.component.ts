@@ -43,6 +43,19 @@ export class StrategyManagerComponent implements OnInit {
         })
     }
 
+    changeStrategyStatusAndSetProgress(strategy,status){
+        this.creator.changeStrategyStatusAndSetProgress(strategy, status).subscribe(data => {
+            if (data.success) {
+                this.strategy.isActive = !(this.strategy.isActive);
+            } else {
+                this.flashMessage.show('Something went wrong while changing the status', {
+                    cssClass: 'alert-danger',
+                    timeout: 3000
+                });
+            }
+        })
+    }
+
     getStatusStrategy(status) {
         if (status) {
             return "The strategy is active now"

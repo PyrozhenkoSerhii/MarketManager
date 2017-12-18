@@ -5,15 +5,13 @@ const jwt = require('jsonwebtoken');
 const config = require('../config/database');
 const Project = require('../models/project');
 
-//save
 router.post('/saveProject', function (req, res, next) {
-    // noinspection JSAnnotator
-    let newProject = new Project({
+    var newProject = new Project({
         name: req.body.name,
         goal: req.body.goal,
         description: req.body.description,
         duration: req.body.duration,
-        timeCompleted:req.body.timeCompleted,
+        timeCompleted: req.body.timeCompleted,
         isConfirmed: req.body.isConfirmed,
         isActive: req.body.isActive,
         createdDate: req.body.createdDate,
@@ -61,18 +59,20 @@ router.post('/deleteProject', function (req, res, next) {
 
 router.post('/changeStatus', function (req, res, next) {
     var projectChanger = [req.body.project, req.body.changeTo];
+    var changedTo = req.body.changeTo;
 
     Project.changeStatus(projectChanger, function (err, changed) {
         if (err) {
             res.json({success: false, msg: 'Failed to change the status of the project'})
         }
-        if(changed) {
+        if (changed) {
             res.json({success: true, msg: 'Status was changed'})
-            console.log('here will be func');
+            if (changedTo) {
+
+            }
         }
 
     })
 });
-
 
 module.exports = router;

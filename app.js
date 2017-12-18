@@ -6,15 +6,11 @@ const passport = require('passport');
 const mongoose = require('mongoose');
 const config = require('./config/database');
 
-//Connect to DB
 mongoose.connect(config.database);
 
-//on connection
 mongoose.connection.on('connected',function () {
     console.log('Connected to database'+config.database);
 });
-
-//on error
 mongoose.connection.on('error',function (err) {
     console.log('Database error'+err);
 });
@@ -46,17 +42,14 @@ app.use('/users',users);
 app.use('/strategies',strategies);
 app.use('/projects',projects);
 
-//index route
 app.get('/',function (req,res) {
-    res.send('Invalin Endpoint');
+    res.send('Invalid Endpoint');
 });
 
 app.get('*',function (req,res) {
     res.sendFile(path.join(__dirname,'public/index.html'))
 });
 
-
-//start server
 app.listen(port, function () {
     console.log('Server started on port' + port);
 });
