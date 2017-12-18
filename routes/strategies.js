@@ -134,10 +134,10 @@ router.post('/changeStatusAndSetStrategy', function (req, res, next) {
             res.json({success: true, msg: 'Status was changed'});
             if(changedTo){
                 isActive = true;
-                while(isActive){
-                    writeProgress(strategy);
-                    setInterval(writeProgress(strategy),600000);
-                }
+                // while(isActive){
+                //     writeProgress(strategy);
+                //     setInterval(writeProgress(strategy),600000);
+                // }
             }else {
                 isActive = false;
             }
