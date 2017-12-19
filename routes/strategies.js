@@ -133,21 +133,22 @@ router.post('/changeStatusAndSetStrategy', function (req, res, next) {
         var schedule = require('node-schedule');
         // var rule = new schedule.RecurrenceRule();
         // rule.minute = 42;
-        var j;
 
-        j = schedule.scheduleJob('*/1 * * * *', function(){
-            console.log('Right the process to '+req.body.strategy.name);
+        var j = schedule.scheduleJob('*/5 * * * *', function(){
+            Strategy.getStrategyById(strategyId, function (err, strategy) {
+                if (err) {
+                    return new Error(err);
+                }
+                var currentStrategy = strategy;
+                if(currentStrategy.isActive){
+                    writeProgress(currentStrategy);
+                    console.log('We have written the process to '+currentStrategy.name);
+                }else{}
+                    j.cancelJob();
+                    console.log('We stopped to write the progress to '+currentStrategy.name);
+            });
         });
 
-        //j.cancelJob();
-
-
-        // Strategy.getStrategyById(strategyId, function (err, strategy) {
-        //     if (err) {
-        //         return new Error(err);
-        //     }
-        //     var currentStrategy = strategy;
-        // });
         res.json({success: true, msg: 'Status was changed'});
 
     });
