@@ -4,7 +4,6 @@ import {FlashMessagesService} from "angular2-flash-messages";
 import {Router} from "@angular/router";
 import {Project} from "../../class/Project";
 import {Strategy} from "../../class/Strategy";
-import * as moment from 'moment';
 
 @Component({
     selector: 'app-project-manager',
@@ -20,11 +19,24 @@ export class ProjectManagerComponent implements OnInit {
                 private router: Router) {
         this.project = this.creator.getProjectInfo();
         this.getStrategies();
-        console.log('constr');
     }
 
     ngOnInit() {
         this.getStrategies();
+    }
+
+    changeProjectStatusAndSetTime(strategy, status) {
+        this.creator.changeProjectStatusAndSetTime(strategy, status).subscribe(data => {
+            if (data.success) {
+                this.project.isActive = !(this.project.isActive);
+                this.flashMessage.show('Status was changed', {cssClass: 'alert-success', timeout: 3000});
+            } else {
+                this.flashMessage.show('Something went wrong while changing the status', {
+                    cssClass: 'alert-danger',
+                    timeout: 3000
+                });
+            }
+        })
     }
 
     getStatusProject(status) {
@@ -55,21 +67,6 @@ export class ProjectManagerComponent implements OnInit {
 
         })
     }
-
-    changeProjectStatus(project, status) {
-        this.creator.changeProjectStatus(project, status).subscribe(data => {
-            if (data.success) {
-                this.project.isActive = !(this.project.isActive);
-                this.flashMessage.show('Status was changed', {cssClass: 'alert-success', timeout: 3000});
-            } else {
-                this.flashMessage.show('Something went wrong while changing the status', {
-                    cssClass: 'alert-danger',
-                    timeout: 3000
-                });
-            }
-        })
-    }
-
 
     strategyInfo(strategy) {
         this.creator.sendStrategyInfo(strategy);

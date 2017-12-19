@@ -26,7 +26,6 @@ export class ProfileComponent implements OnInit {
                 private activatedRoute: ActivatedRoute) {
         this.getProjects();
         this.getStrategies();
-        //this.createDummyProgress();
     }
 
     ngOnInit() {
@@ -116,30 +115,6 @@ export class ProfileComponent implements OnInit {
 
     getDateForProgress(date) {
         return this.creator.getDateForProgress(date);
-    }
-
-    createDummyProgress() {
-        let dummyProgress = setTimeout(() => this.dummyProgressFunc(), 1000);
-    }
-
-    dummyProgressFunc() {
-        for (let strategy of this.strategies) {
-            let testValue = +strategy.initialData + Math.floor(Math.random() * (100 - 10)) + "";
-            let testName = this.getDateForProgress(Date.now()) + "";
-            strategy.progress[testName.toString()] = testValue;
-
-            this.creator.strategyProgressUpdate(strategy, strategy.progress).subscribe(data => {
-                if (data.success) {
-                    console.log(data);
-                } else {
-                    this.flashMessage.show('Something went wrong while changing the progress', {
-                        cssClass: 'alert-danger',
-                        timeout: 3000
-                    });
-                }
-            });
-
-        }
     }
 
 }

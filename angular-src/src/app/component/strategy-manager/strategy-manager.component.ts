@@ -16,31 +16,13 @@ export class StrategyManagerComponent implements OnInit {
     label: String = this.diagramBuilderLabel();
     parameters = [];
 
-
     constructor(private creator: CreatorService,
                 private flashMessage: FlashMessagesService,
                 private router: Router) {
         this.getParameters();
-
     }
 
-    ngOnInit() {
-
-    }
-
-    changeStrategyStatus(strategy, status) {
-        this.creator.changeStrategyStatus(strategy, status).subscribe(data => {
-            if (data.success) {
-                this.strategy.isActive = !(this.strategy.isActive);
-                this.flashMessage.show('Status was changed', {cssClass: 'alert-success', timeout: 3000});
-            } else {
-                this.flashMessage.show('Something went wrong while changing the status', {
-                    cssClass: 'alert-danger',
-                    timeout: 3000
-                });
-            }
-        })
-    }
+    ngOnInit() {}
 
     changeStrategyStatusAndSetProgress(strategy, status) {
         this.creator.changeStrategyStatusAndSetProgress(strategy, status).subscribe(data => {

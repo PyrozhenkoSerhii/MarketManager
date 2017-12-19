@@ -86,22 +86,6 @@ export class CreatorService {
     }
 
     //Changers
-    changeProjectStatus(project, status) {
-        let headers = new Headers();
-        let projectChanger = {"project": project, "changeTo": !status};
-        headers.append('Content-Type', 'application/json');
-        return this.http.post('projects/changeStatus', projectChanger, {headers: headers})
-            .map(res => res.json());
-    }
-
-    changeStrategyStatus(strategy, status) {
-        let headers = new Headers();
-        let strategyChanger = {"strategy": strategy, "changeTo": !status};
-        headers.append('Content-Type', 'application/json');
-        return this.http.post('strategies/changeStatus', strategyChanger, {headers: headers})
-            .map(res => res.json());
-    }
-
     changeStrategyStatusAndSetProgress(strategy, status) {
         let headers = new Headers();
         let strategyChanger = {"strategy": strategy, "changeTo": !status};
@@ -110,11 +94,11 @@ export class CreatorService {
             .map(res => res.json());
     }
 
-    strategyProgressUpdate(strategy, progress) {
+    changeProjectStatusAndSetTime(project, status) {
         let headers = new Headers();
-        let strategyChanger = {"strategy": strategy, "progress": progress};
+        let projectChanger = {"project": project, "changeTo": !status};
         headers.append('Content-Type', 'application/json');
-        return this.http.post('strategies/changeProgress', strategyChanger, {headers: headers})
+        return this.http.post('projects/changeProjectStatusAndSetTime', projectChanger, {headers: headers})
             .map(res => res.json());
     }
 

@@ -640,7 +640,6 @@ var ProfileComponent = (function () {
         this.activatedRoute = activatedRoute;
         this.getProjects();
         this.getStrategies();
-        //this.createDummyProgress();
     }
     ProfileComponent.prototype.ngOnInit = function () {
         var _this = this;
@@ -727,30 +726,6 @@ var ProfileComponent = (function () {
     ProfileComponent.prototype.getDateForProgress = function (date) {
         return this.creator.getDateForProgress(date);
     };
-    ProfileComponent.prototype.createDummyProgress = function () {
-        var _this = this;
-        var dummyProgress = setTimeout(function () { return _this.dummyProgressFunc(); }, 1000);
-    };
-    ProfileComponent.prototype.dummyProgressFunc = function () {
-        var _this = this;
-        for (var _i = 0, _a = this.strategies; _i < _a.length; _i++) {
-            var strategy = _a[_i];
-            var testValue = +strategy.initialData + Math.floor(Math.random() * (100 - 10)) + "";
-            var testName = this.getDateForProgress(Date.now()) + "";
-            strategy.progress[testName.toString()] = testValue;
-            this.creator.strategyProgressUpdate(strategy, strategy.progress).subscribe(function (data) {
-                if (data.success) {
-                    console.log(data);
-                }
-                else {
-                    _this.flashMessage.show('Something went wrong while changing the progress', {
-                        cssClass: 'alert-danger',
-                        timeout: 3000
-                    });
-                }
-            });
-        }
-    };
     ProfileComponent = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
             selector: 'app-profile',
@@ -791,7 +766,7 @@ module.exports = module.exports.toString();
 /***/ "../../../../../src/app/component/project-manager/project-manager.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"container\" style=\"margin-top: 10px;\">\n    <div class=\"row\">\n        <div class=\"col-4\">\n\n\n            <div class=\"infoBlock\">\n                <h4 align=\"center\" style=\"font-family: Calibri\">Project info</h4>\n                <p></p>\n                <h6>Name:</h6> {{project.name}}<p></p>\n                <h6>Description: </h6>{{project.description}}<p></p>\n                <h6>Date: </h6> {{getDate(project.createdDate)}}<p></p>\n                <h6>Status: </h6> {{getStatusProject(project.isActive)}}!\n                <button type=\"button\" class=\"btn btn-warning btn-sm\"\n                        (click)=\"changeProjectStatus(project._id,project.isActive)\">\n                    Change\n                </button>\n                <h6>Duration: </h6> {{project.duration}}days <p></p>\n\n                <div class=\"\">\n                    <h4 align=\"center\" style=\"font-family: Calibri\">Progress</h4>\n                    <div class=\"progress\">\n                        <div class=\"progress-bar progress-bar-striped progress-bar-animated\"\n                             role=\"progressbar\" aria-valuenow=\"23\" aria-valuemin=\"0\"\n                             aria-valuemax=\"100\" style=\"width:23%\"></div>\n                    </div>\n                </div>\n            </div>\n        </div>\n\n        <div class=\"col-8\">\n            <div class=\"strategies\" style=\"position:relative; clear:left;\">\n                <h4 align=\"center\" style=\"font-family: Calibri\">Related strategies</h4>\n                <div *ngFor=\"let strategy of strategies\">\n                    <div class=\"strategiesBlock\">\n                        <div class=\"row\">\n                            <div class=\"col-md-10\">\n                                <h4>{{strategy.name}}</h4>\n                                <hr style=\"width: 100%\">\n                            </div>\n\n                            <div class=\"col-md-2\">\n                                <button type=\"button\" class=\"btn btn-danger btn-sm\" style=\"border-radius: 15px; padding-top: 2px; padding-bottom: 2px\"\n                                        (click)=\"deleteStrategy(strategy._id)\">\n                                    X\n                                </button>\n\n                            </div>\n                            <div class=\"col-md-10\">\n                                <h6>Status:{{getStatusStrategy(strategy.isActive)}}</h6>\n                                <h6>Date:{{getDate(strategy.createdDate)}}</h6>\n                            </div>\n                            <div class=\"col-md-2\">\n                                <button type=\"button\" class=\"btn btn-success btn-sm\" style=\"border-radius: 15px; padding-top: 2px; padding-bottom: 2px\"\n                                        (click)=\"strategyInfo(strategy)\">>\n                                </button>\n                            </div>\n                        </div>\n                    </div>\n                </div>\n            </div>\n        </div>\n    </div>\n</div>\n\n\n\n"
+module.exports = "<div class=\"container\" style=\"margin-top: 10px;\">\n    <div class=\"row\">\n        <div class=\"col-4\">\n\n\n            <div class=\"infoBlock\">\n                <h4 align=\"center\" style=\"font-family: Calibri\">Project info</h4>\n                <p></p>\n                <h6>Name:</h6> {{project.name}}<p></p>\n                <h6>Description: </h6>{{project.description}}<p></p>\n                <h6>Date: </h6> {{getDate(project.createdDate)}}<p></p>\n                <h6>Status: </h6> {{getStatusProject(project.isActive)}}!\n                <button type=\"button\" class=\"btn btn-warning btn-sm\"\n                        (click)=\"changeProjectStatusAndSetTime(project,project.isActive)\">\n                    Change\n                </button>\n                <h6>Duration: </h6> {{project.duration}}days <p></p>\n\n                <div class=\"\">\n                    <h4 align=\"center\" style=\"font-family: Calibri\">Progress</h4>\n                    <div class=\"progress\">\n                        <div class=\"progress-bar progress-bar-striped progress-bar-animated\"\n                             role=\"progressbar\" aria-valuenow=\"23\" aria-valuemin=\"0\"\n                             aria-valuemax=\"100\" style=\"width:23%\"></div>\n                    </div>\n                </div>\n            </div>\n        </div>\n\n        <div class=\"col-8\">\n            <div class=\"strategies\" style=\"position:relative; clear:left;\">\n                <h4 align=\"center\" style=\"font-family: Calibri\">Related strategies</h4>\n                <div *ngFor=\"let strategy of strategies\">\n                    <div class=\"strategiesBlock\">\n                        <div class=\"row\">\n                            <div class=\"col-md-10\">\n                                <h4>{{strategy.name}}</h4>\n                                <hr style=\"width: 100%\">\n                            </div>\n\n                            <div class=\"col-md-2\">\n                                <button type=\"button\" class=\"btn btn-danger btn-sm\" style=\"border-radius: 15px; padding-top: 2px; padding-bottom: 2px\"\n                                        (click)=\"deleteStrategy(strategy._id)\">\n                                    X\n                                </button>\n\n                            </div>\n                            <div class=\"col-md-10\">\n                                <h6>Status:{{getStatusStrategy(strategy.isActive)}}</h6>\n                                <h6>Date:{{getDate(strategy.createdDate)}}</h6>\n                            </div>\n                            <div class=\"col-md-2\">\n                                <button type=\"button\" class=\"btn btn-success btn-sm\" style=\"border-radius: 15px; padding-top: 2px; padding-bottom: 2px\"\n                                        (click)=\"strategyInfo(strategy)\">>\n                                </button>\n                            </div>\n                        </div>\n                    </div>\n                </div>\n            </div>\n        </div>\n    </div>\n</div>\n\n\n\n"
 
 /***/ }),
 
@@ -825,10 +800,24 @@ var ProjectManagerComponent = (function () {
         this.router = router;
         this.project = this.creator.getProjectInfo();
         this.getStrategies();
-        console.log('constr');
     }
     ProjectManagerComponent.prototype.ngOnInit = function () {
         this.getStrategies();
+    };
+    ProjectManagerComponent.prototype.changeProjectStatusAndSetTime = function (strategy, status) {
+        var _this = this;
+        this.creator.changeProjectStatusAndSetTime(strategy, status).subscribe(function (data) {
+            if (data.success) {
+                _this.project.isActive = !(_this.project.isActive);
+                _this.flashMessage.show('Status was changed', { cssClass: 'alert-success', timeout: 3000 });
+            }
+            else {
+                _this.flashMessage.show('Something went wrong while changing the status', {
+                    cssClass: 'alert-danger',
+                    timeout: 3000
+                });
+            }
+        });
     };
     ProjectManagerComponent.prototype.getStatusProject = function (status) {
         if (status) {
@@ -850,21 +839,6 @@ var ProjectManagerComponent = (function () {
             }
             else {
                 _this.flashMessage.show('Something went wrong while getting the strategies', {
-                    cssClass: 'alert-danger',
-                    timeout: 3000
-                });
-            }
-        });
-    };
-    ProjectManagerComponent.prototype.changeProjectStatus = function (project, status) {
-        var _this = this;
-        this.creator.changeProjectStatus(project, status).subscribe(function (data) {
-            if (data.success) {
-                _this.project.isActive = !(_this.project.isActive);
-                _this.flashMessage.show('Status was changed', { cssClass: 'alert-success', timeout: 3000 });
-            }
-            else {
-                _this.flashMessage.show('Something went wrong while changing the status', {
                     cssClass: 'alert-danger',
                     timeout: 3000
                 });
@@ -1096,23 +1070,7 @@ var StrategyManagerComponent = (function () {
         this.lineChartType = 'line';
         this.getParameters();
     }
-    StrategyManagerComponent.prototype.ngOnInit = function () {
-    };
-    StrategyManagerComponent.prototype.changeStrategyStatus = function (strategy, status) {
-        var _this = this;
-        this.creator.changeStrategyStatus(strategy, status).subscribe(function (data) {
-            if (data.success) {
-                _this.strategy.isActive = !(_this.strategy.isActive);
-                _this.flashMessage.show('Status was changed', { cssClass: 'alert-success', timeout: 3000 });
-            }
-            else {
-                _this.flashMessage.show('Something went wrong while changing the status', {
-                    cssClass: 'alert-danger',
-                    timeout: 3000
-                });
-            }
-        });
-    };
+    StrategyManagerComponent.prototype.ngOnInit = function () { };
     StrategyManagerComponent.prototype.changeStrategyStatusAndSetProgress = function (strategy, status) {
         var _this = this;
         this.creator.changeStrategyStatusAndSetProgress(strategy, status).subscribe(function (data) {
@@ -1682,20 +1640,6 @@ var CreatorService = (function () {
             .map(function (res) { return res.json(); });
     };
     //Changers
-    CreatorService.prototype.changeProjectStatus = function (project, status) {
-        var headers = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["Headers"]();
-        var projectChanger = { "project": project, "changeTo": !status };
-        headers.append('Content-Type', 'application/json');
-        return this.http.post('projects/changeStatus', projectChanger, { headers: headers })
-            .map(function (res) { return res.json(); });
-    };
-    CreatorService.prototype.changeStrategyStatus = function (strategy, status) {
-        var headers = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["Headers"]();
-        var strategyChanger = { "strategy": strategy, "changeTo": !status };
-        headers.append('Content-Type', 'application/json');
-        return this.http.post('strategies/changeStatus', strategyChanger, { headers: headers })
-            .map(function (res) { return res.json(); });
-    };
     CreatorService.prototype.changeStrategyStatusAndSetProgress = function (strategy, status) {
         var headers = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["Headers"]();
         var strategyChanger = { "strategy": strategy, "changeTo": !status };
@@ -1703,11 +1647,11 @@ var CreatorService = (function () {
         return this.http.post('strategies/changeStatusAndSetProgress', strategyChanger, { headers: headers })
             .map(function (res) { return res.json(); });
     };
-    CreatorService.prototype.strategyProgressUpdate = function (strategy, progress) {
+    CreatorService.prototype.changeProjectStatusAndSetTime = function (project, status) {
         var headers = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["Headers"]();
-        var strategyChanger = { "strategy": strategy, "progress": progress };
+        var projectChanger = { "project": project, "changeTo": !status };
         headers.append('Content-Type', 'application/json');
-        return this.http.post('strategies/changeProgress', strategyChanger, { headers: headers })
+        return this.http.post('projects/changeProjectStatusAndSetTime', projectChanger, { headers: headers })
             .map(function (res) { return res.json(); });
     };
     //Managers

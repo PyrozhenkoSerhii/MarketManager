@@ -90,4 +90,23 @@ module.exports.changeStatus = function (projectChanger, callback) {
 
 };
 
+module.exports.writeCompletedTime = function (projectChanger) {
+    mongoClient.connect(URL, function (err, db) {
+        if (err) throw err;
+        var myquery = {_id: ObjectId(projectChanger[0]._id)};
+        var newvalues = {$set: {timeCompleted: projectChanger[1]}};
 
+        db.collection("projects").updateOne(myquery, newvalues, function (err, res) {
+            if (err) throw err;
+            db.close();
+        });
+    });
+};
+
+module.exports.getProjectById = function (id, callback) {
+    Project.findById(id, callback);
+    // Strategy.findById(id,function (err,result) {
+    //     if(err) throw new Error(err);
+    //     callback(null,result);
+    // })
+};

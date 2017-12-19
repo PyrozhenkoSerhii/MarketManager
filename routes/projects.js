@@ -75,4 +75,42 @@ router.post('/changeStatus', function (req, res, next) {
     })
 });
 
+router.post('/changeProjectStatusAndSetTime', function (req, res, next) {
+    var projectChanger = [req.body.project._id, req.body.changeTo];
+    var changedTo = req.body.changeTo;
+    var projectId = req.body.project._id;
+
+    Project.changeStatus(projectChanger, function (err, changed) {
+        if (err) {
+            res.json({success: false, msg: 'Failed to change the status of the project'})
+        }
+
+        var schedule = require('node-schedule');
+        var j = schedule.scheduleJob('0 0 */1 * *', function () {
+            Project.getProjectById(projectId, function (err, project) {
+                if (err) {
+                    return new Error(err);
+                }
+                var currentProject = project;
+                if (currentProject.isActive) {
+                    writeCompletedTime(currentProject);
+                    console.log('We have written the completed time to ' + currentProject.name);
+                } else {
+                    j.cancelJob();
+                    console.log('We stopped to write the time to ' + currentProject.name);
+                }
+            });
+        });
+        res.json({success: true, msg: 'Status was changed'})
+    })
+});
+
+function writeCompletedTime(project) {
+    var currentCompletedTime = parseInt(project.timeCompleted);
+    var newCompletedTime = (currentCompletedTime + 1).toString();
+
+    var projectChanger = [project, newCompletedTime];
+    Project.writeCompletedTime(projectChanger);
+}
+
 module.exports = router;
