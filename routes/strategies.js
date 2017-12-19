@@ -143,9 +143,11 @@ router.post('/changeStatusAndSetStrategy', function (req, res, next) {
                 if(currentStrategy.isActive){
                     writeProgress(currentStrategy);
                     console.log('We have written the process to '+currentStrategy.name);
-                }else{}
+                }else{
                     j.cancelJob();
                     console.log('We stopped to write the progress to '+currentStrategy.name);
+                }
+
             });
         });
 
@@ -172,7 +174,7 @@ router.post('/changeProgress', function (req, res, next) {
 
 function writeProgress(strategy) {
     var date = new Date().toISOString().replace(/T/, ' ').replace(/\..+/, '');
-    var testValue = +strategy.initialData + Math.floor(Math.random() * (100 - 10)) + "";
+    var testValue = +strategy.initialData + 50 + Math.floor(Math.random() * (100 - 10)) + "";
     var testName = date + "";
     strategy.progress[testName.toString()] = testValue;
 
