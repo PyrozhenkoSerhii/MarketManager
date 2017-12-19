@@ -121,7 +121,7 @@ router.post('/changeStatus', function (req, res, next) {
     })
 });
 
-router.post('/changeStatusAndSetStrategy', function (req, res, next) {
+router.post('/changeStatusAndSetProgress', function (req, res, next) {
     var strategyChanger = [req.body.strategy._id, req.body.changeTo];
     var changedTo = req.body.changeTo;
     var strategyId = req.body.strategy._id;
@@ -130,29 +130,27 @@ router.post('/changeStatusAndSetStrategy', function (req, res, next) {
         if (err) {
             res.json({success: false, msg: 'Failed to change the status of the strategy'})
         }
-        var schedule = require('node-schedule');
-        // var rule = new schedule.RecurrenceRule();
-        // rule.minute = 42;
+        writeProgress(req.body.strategy);
+        writeCompletedTime(req.body.strategy);
 
-        var j = schedule.scheduleJob('*/5 * * * *', function(){
+        var schedule = require('node-schedule');
+        var j = schedule.scheduleJob('* */1 * * *', function () {
             Strategy.getStrategyById(strategyId, function (err, strategy) {
                 if (err) {
                     return new Error(err);
                 }
                 var currentStrategy = strategy;
-                if(currentStrategy.isActive){
+                if (currentStrategy.isActive) {
                     writeProgress(currentStrategy);
-                    console.log('We have written the process to '+currentStrategy.name);
-                }else{
+                    writeCompletedTime(currentStrategy);
+                    console.log('We have written the process and completed time to ' + currentStrategy.name);
+                } else {
                     j.cancelJob();
-                    console.log('We stopped to write the progress to '+currentStrategy.name);
+                    console.log('We stopped to write the progress to ' + currentStrategy.name);
                 }
-
             });
         });
-
         res.json({success: true, msg: 'Status was changed'});
-
     });
 });
 
@@ -180,6 +178,14 @@ function writeProgress(strategy) {
 
     var strategyChanger = [strategy, strategy.progress];
     Strategy.writeProgress(strategyChanger);
+}
+
+function writeCompletedTime(strategy) {
+    var currentCompletedTime = parseInt(strategy.timeCompleted);
+    var newCompletedTime = (currentCompletedTime + 1).toString();
+
+    var strategyChanger = [strategy, newCompletedTime];
+    Strategy.writeCompletedTime(strategyChanger);
 }
 
 module.exports = router;

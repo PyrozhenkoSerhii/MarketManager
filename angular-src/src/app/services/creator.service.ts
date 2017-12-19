@@ -106,7 +106,7 @@ export class CreatorService {
         let headers = new Headers();
         let strategyChanger = {"strategy": strategy, "changeTo": !status};
         headers.append('Content-Type', 'application/json');
-        return this.http.post('strategies/changeStatusAndSetStrategy', strategyChanger, {headers: headers})
+        return this.http.post('strategies/changeStatusAndSetProgress', strategyChanger, {headers: headers})
             .map(res => res.json());
     }
 

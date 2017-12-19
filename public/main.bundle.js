@@ -640,7 +640,7 @@ var ProfileComponent = (function () {
         this.activatedRoute = activatedRoute;
         this.getProjects();
         this.getStrategies();
-        this.createDummyProgress();
+        //this.createDummyProgress();
     }
     ProfileComponent.prototype.ngOnInit = function () {
         var _this = this;
@@ -701,8 +701,6 @@ var ProfileComponent = (function () {
                 });
             }
         });
-        // this.flashMessage.show('Project was deleted', {cssClass: 'alert-success', timeout: 3000});
-        // location.reload();
     };
     ProfileComponent.prototype.deleteStrategy = function (strategy) {
         var _this = this;
@@ -719,8 +717,6 @@ var ProfileComponent = (function () {
                 });
             }
         });
-        // this.flashMessage.show('Strategy was deleted', {cssClass: 'alert-success', timeout: 3000});
-        // location.reload();
     };
     ProfileComponent.prototype.getStatus = function (status) {
         return this.creator.getStatus(status);
@@ -1685,6 +1681,7 @@ var CreatorService = (function () {
         return this.http.post('strategies/deleteStrategy', strategy_id, { headers: headers })
             .map(function (res) { return res.json(); });
     };
+    //Changers
     CreatorService.prototype.changeProjectStatus = function (project, status) {
         var headers = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["Headers"]();
         var projectChanger = { "project": project, "changeTo": !status };
@@ -1703,10 +1700,17 @@ var CreatorService = (function () {
         var headers = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["Headers"]();
         var strategyChanger = { "strategy": strategy, "changeTo": !status };
         headers.append('Content-Type', 'application/json');
-        return this.http.post('strategies/changeStatusAndSetStrategy', strategyChanger, { headers: headers })
+        return this.http.post('strategies/changeStatusAndSetProgress', strategyChanger, { headers: headers })
             .map(function (res) { return res.json(); });
     };
-    //Manager
+    CreatorService.prototype.strategyProgressUpdate = function (strategy, progress) {
+        var headers = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["Headers"]();
+        var strategyChanger = { "strategy": strategy, "progress": progress };
+        headers.append('Content-Type', 'application/json');
+        return this.http.post('strategies/changeProgress', strategyChanger, { headers: headers })
+            .map(function (res) { return res.json(); });
+    };
+    //Managers
     CreatorService.prototype.sendProjectInfo = function (project) {
         this.project = project;
     };
@@ -1730,13 +1734,6 @@ var CreatorService = (function () {
             return "active";
         }
         return "disabled";
-    };
-    CreatorService.prototype.strategyProgressUpdate = function (strategy, progress) {
-        var headers = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["Headers"]();
-        var strategyChanger = { "strategy": strategy, "progress": progress };
-        headers.append('Content-Type', 'application/json');
-        return this.http.post('strategies/changeProgress', strategyChanger, { headers: headers })
-            .map(function (res) { return res.json(); });
     };
     CreatorService = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Injectable"])(),

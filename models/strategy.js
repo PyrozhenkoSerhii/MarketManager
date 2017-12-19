@@ -157,3 +157,15 @@ module.exports.writeProgress = function (strategyChanger) {
     });
 };
 
+module.exports.writeCompletedTime = function (strategyChanger) {
+    mongoClient.connect(URL, function (err, db) {
+        if (err) throw err;
+        var myquery = {_id: ObjectId(strategyChanger[0]._id)};
+        var newvalues = {$set: {timeCompleted: strategyChanger[1]}};
+
+        db.collection("strategies").updateOne(myquery, newvalues, function (err, res) {
+            if (err) throw err;
+            db.close();
+        });
+    });
+};
