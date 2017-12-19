@@ -89,9 +89,6 @@ export class ProfileComponent implements OnInit {
                 });
             }
         });
-
-        // this.flashMessage.show('Project was deleted', {cssClass: 'alert-success', timeout: 3000});
-        // location.reload();
     }
 
     deleteStrategy(strategy) {
@@ -107,9 +104,6 @@ export class ProfileComponent implements OnInit {
                 });
             }
         });
-
-        // this.flashMessage.show('Strategy was deleted', {cssClass: 'alert-success', timeout: 3000});
-        // location.reload();
     }
 
     getStatus(status) {

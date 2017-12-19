@@ -10,7 +10,6 @@ export class AuthService {
 
   constructor(private http:Http) { }
 
-
     registerUser(user){
         let headers = new Headers();
         headers.append('Content-Type','application/json');

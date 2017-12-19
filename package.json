@@ -22,6 +22,7 @@
     "mongodb": "^2.2.33",
     "mongoose": "*",
     "ng2-charts": "^1.6.0",
+    "node-schedule": "^1.2.5",
     "passport": "*",
     "passport-jwt": "*",
     "path": "^0.12.7"

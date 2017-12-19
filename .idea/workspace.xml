@@ -14,25 +14,60 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="login.component.ts" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/angular-src/src/app/component/login/login.component.ts">
+      <file leaf-file-name="strategy.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/models/strategy.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="394">
-              <caret line="29" column="62" lean-forward="false" selection-start-line="29" selection-start-column="62" selection-end-line="29" selection-end-column="62" />
+            <state relative-caret-position="0">
+              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
               <folding>
-                <element signature="e#0#50#0" expanded="true" />
-                <element signature="e#758#1171#0" expanded="false" />
+                <element signature="e#242#1106#0" expanded="false" />
+                <element signature="e#1252#1572#0" expanded="false" />
+                <element signature="e#1644#1970#0" expanded="false" />
+                <element signature="e#2030#2207#0" expanded="false" />
+                <element signature="e#2272#2559#0" expanded="false" />
+                <element signature="e#2624#2937#0" expanded="false" />
+                <element signature="e#3007#3410#0" expanded="false" />
+                <element signature="e#3482#3889#0" expanded="false" />
+                <element signature="e#3950#4323#0" expanded="false" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="strategy.component.html" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/angular-src/src/app/component/strategy/strategy.component.html">
+      <file leaf-file-name="strategies.js" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/routes/strategies.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="323">
-              <caret line="19" column="56" lean-forward="true" selection-start-line="19" selection-start-column="56" selection-end-line="19" selection-end-column="56" />
-              <folding />
+            <state relative-caret-position="373">
+              <caret line="138" column="11" lean-forward="true" selection-start-line="138" selection-start-column="11" selection-end-line="138" selection-end-column="11" />
+              <folding>
+                <element signature="e#317#1184#0" expanded="false" />
+                <element signature="e#1252#1588#0" expanded="false" />
+                <element signature="e#1659#2007#0" expanded="false" />
+                <element signature="e#2069#3029#0" expanded="false" />
+                <element signature="e#3090#3389#0" expanded="false" />
+                <element signature="e#3448#3890#0" expanded="false" />
+                <element signature="e#4915#5313#0" expanded="false" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="auth.service.ts" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/angular-src/src/app/services/auth.service.ts">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="187">
+              <caret line="11" column="0" lean-forward="false" selection-start-line="11" selection-start-column="0" selection-end-line="11" selection-end-column="0" />
+              <folding>
+                <element signature="e#0#43#0" expanded="true" />
+                <element signature="n#!!block;n#registerUser#0;n#AuthService#0" expanded="false" />
+                <element signature="n#!!block;n#authenticateUser#0;n#AuthService#0" expanded="false" />
+                <element signature="n#!!block;n#storeUserData#0;n#AuthService#0" expanded="false" />
+                <element signature="n#!!block;n#logout#0;n#AuthService#0" expanded="false" />
+                <element signature="n#!!block;n#getProfile#0;n#AuthService#0" expanded="false" />
+                <element signature="n#!!block;n#loadToken#0;n#AuthService#0" expanded="false" />
+                <element signature="n#!!block;n#loggedIn#0;n#AuthService#0" expanded="false" />
+                <element signature="n#!!block;n#getCurrentUser#0;n#AuthService#0" expanded="false" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -40,8 +75,8 @@
       <file leaf-file-name="profile.component.ts" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/angular-src/src/app/component/profile/profile.component.ts">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-494">
-              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+            <state relative-caret-position="-120">
+              <caret line="22" column="34" lean-forward="false" selection-start-line="22" selection-start-column="34" selection-end-line="22" selection-end-column="34" />
               <folding>
                 <element signature="e#0#48#0" expanded="true" />
                 <element signature="n#!!block;n#ngOnInit#0;n#ProfileComponent#0" expanded="false" />
@@ -61,110 +96,101 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="strategy-manager.component.ts" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/angular-src/src/app/component/strategy-manager/strategy-manager.component.ts">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="51">
-              <caret line="3" column="39" lean-forward="false" selection-start-line="3" selection-start-column="39" selection-end-line="3" selection-end-column="39" />
-              <folding>
-                <element signature="n#!!block;n#changeStrategyStatus#0;n#StrategyManagerComponent#0" expanded="false" />
-                <element signature="n#!!block;n#changeStrategyStatusAndSetProgress#0;n#StrategyManagerComponent#0" expanded="false" />
-                <element signature="n#!!block;n#getStatusStrategy#0;n#StrategyManagerComponent#0" expanded="false" />
-                <element signature="n#!!block;n#getDate#0;n#StrategyManagerComponent#0" expanded="false" />
-                <element signature="n#!!block;n#getTrackingPoint#0;n#StrategyManagerComponent#0" expanded="false" />
-                <element signature="n#!!block;n#getCurrentData#0;n#StrategyManagerComponent#0" expanded="false" />
-                <element signature="n#!!block;n#diagramBuilderData#0;n#StrategyManagerComponent#0" expanded="false" />
-                <element signature="n#!!block;n#diagramBuilderInterval#0;n#StrategyManagerComponent#0" expanded="false" />
-                <element signature="n#!!block;n#diagramBuilderLabel#0;n#StrategyManagerComponent#0" expanded="false" />
-                <element signature="e#3424#3485#0" expanded="false" />
-                <element signature="e#3658#4651#0" expanded="false" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="project-manager.component.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/angular-src/src/app/component/project-manager/project-manager.component.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="178">
-              <caret line="13" column="34" lean-forward="false" selection-start-line="13" selection-start-column="33" selection-end-line="13" selection-end-column="34" />
-              <folding>
-                <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="login.component.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/angular-src/src/app/component/login/login.component.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="strategy-manager.component.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/angular-src/src/app/component/strategy-manager/strategy-manager.component.html">
+      <file leaf-file-name="projects.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/routes/projects.js">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="0">
               <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
               <folding>
-                <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#h4#0;n#div#1;n#div#0;n#div#0;n#!!top" expanded="true" />
+                <element signature="e#291#963#0" expanded="false" />
+                <element signature="e#1029#1355#0" expanded="false" />
+                <element signature="e#1415#1741#0" expanded="false" />
+                <element signature="e#1800#2243#0" expanded="false" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="strategy.component.ts" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/angular-src/src/app/component/strategy/strategy.component.ts">
+      <file leaf-file-name="project.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/models/project.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="255">
-              <caret line="15" column="29" lean-forward="true" selection-start-line="15" selection-start-column="29" selection-end-line="15" selection-end-column="29" />
+            <state relative-caret-position="0">
+              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
               <folding>
-                <element signature="e#0#48#0" expanded="true" />
+                <element signature="e#241#853#0" expanded="false" />
+                <element signature="e#995#1313#0" expanded="false" />
+                <element signature="e#1376#1410#0" expanded="false" />
+                <element signature="e#1473#1783#0" expanded="false" />
+                <element signature="e#1852#2252#0" expanded="false" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="project-manager.component.ts" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/angular-src/src/app/component/project-manager/project-manager.component.ts">
+      <file leaf-file-name="creator.service.ts" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/angular-src/src/app/services/creator.service.ts">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="343">
-              <caret line="58" column="41" lean-forward="false" selection-start-line="58" selection-start-column="41" selection-end-line="58" selection-end-column="41" />
+            <state relative-caret-position="0">
+              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
               <folding>
-                <element signature="e#0#48#0" expanded="true" />
-                <element signature="n#!!block;n#getStatusProject#0;n#ProjectManagerComponent#0" expanded="false" />
-                <element signature="n#!!block;n#getStatusStrategy#0;n#ProjectManagerComponent#0" expanded="false" />
-                <element signature="n#!!block;n#getDate#0;n#ProjectManagerComponent#0" expanded="false" />
-                <element signature="n#!!block;n#getStrategies#0;n#ProjectManagerComponent#0" expanded="false" />
-                <element signature="n#!!block;n#changeProjectStatus#0;n#ProjectManagerComponent#0" expanded="false" />
-                <element signature="n#!!block;n#strategyInfo#0;n#ProjectManagerComponent#0" expanded="false" />
-                <element signature="n#!!block;n#getCompletedPart#0;n#ProjectManagerComponent#0" expanded="false" />
+                <element signature="e#0#41#0" expanded="true" />
+                <element signature="n#!!block;n#sendProjectData#0;n#CreatorService#0" expanded="false" />
+                <element signature="n#!!block;n#getProjectDataAndSetStrategy#0;n#CreatorService#0" expanded="false" />
+                <element signature="n#!!block;n#getProject#0;n#CreatorService#0" expanded="false" />
+                <element signature="n#!!block;n#saveStrategy#0;n#CreatorService#0" expanded="false" />
+                <element signature="n#!!block;n#saveProject#0;n#CreatorService#0" expanded="false" />
+                <element signature="n#!!block;n#getProjectsByUser#0;n#CreatorService#0" expanded="false" />
+                <element signature="n#!!block;n#getStrategyByProject#0;n#CreatorService#0" expanded="false" />
+                <element signature="n#!!block;n#getStrategyByUser#0;n#CreatorService#0" expanded="false" />
+                <element signature="n#!!block;n#deleteProject#0;n#CreatorService#0" expanded="false" />
+                <element signature="n#!!block;n#deleteStrategy#0;n#CreatorService#0" expanded="false" />
+                <element signature="n#!!block;n#changeProjectStatus#0;n#CreatorService#0" expanded="false" />
+                <element signature="n#!!block;n#changeStrategyStatus#0;n#CreatorService#0" expanded="false" />
+                <element signature="n#!!block;n#changeStrategyStatusAndSetProgress#0;n#CreatorService#0" expanded="false" />
+                <element signature="n#!!block;n#strategyProgressUpdate#0;n#CreatorService#0" expanded="false" />
+                <element signature="n#!!block;n#sendProjectInfo#0;n#CreatorService#0" expanded="false" />
+                <element signature="n#!!block;n#sendStrategyInfo#0;n#CreatorService#0" expanded="false" />
+                <element signature="n#!!block;n#getProjectInfo#0;n#CreatorService#0" expanded="false" />
+                <element signature="n#!!block;n#getStrategyInfo#0;n#CreatorService#0" expanded="false" />
+                <element signature="n#!!block;n#getDate#0;n#CreatorService#0" expanded="false" />
+                <element signature="n#!!block;n#getDateForProgress#0;n#CreatorService#0" expanded="false" />
+                <element signature="n#!!block;n#getStatus#0;n#CreatorService#0" expanded="false" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="strategy.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/models/strategy.js">
+      <file leaf-file-name="admin-func.service.ts" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/angular-src/src/app/services/admin-func.service.ts">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="323">
-              <caret line="102" column="62" lean-forward="false" selection-start-line="102" selection-start-column="62" selection-end-line="102" selection-end-column="62" />
+            <state relative-caret-position="187">
+              <caret line="11" column="0" lean-forward="false" selection-start-line="11" selection-start-column="0" selection-end-line="11" selection-end-column="0" />
               <folding>
-                <element signature="e#242#1106#0" expanded="false" />
-                <element signature="e#1252#1572#0" expanded="false" />
-                <element signature="e#1644#1970#0" expanded="false" />
-                <element signature="e#2030#2070#0" expanded="false" />
-                <element signature="e#2135#2422#0" expanded="false" />
-                <element signature="e#2487#2800#0" expanded="false" />
-                <element signature="e#2870#3273#0" expanded="false" />
-                <element signature="e#3345#3752#0" expanded="false" />
-                <element signature="e#3813#4186#0" expanded="false" />
+                <element signature="e#0#41#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="auth.guard.ts" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/angular-src/src/app/guards/auth.guard.ts">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="0">
+              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+              <folding>
+                <element signature="e#0#41#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="admin-func.service.spec.ts" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/angular-src/src/app/services/admin-func.service.spec.ts">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="0">
+              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+              <folding>
+                <element signature="e#0#56#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -207,9 +233,7 @@
         <option value="$PROJECT_DIR$/angular-src/src/app/component/register/register.component.ts" />
         <option value="$PROJECT_DIR$/angular-src/src/app/class/Project.ts" />
         <option value="$PROJECT_DIR$/angular-src/src/app/class/Strategy.ts" />
-        <option value="$PROJECT_DIR$/angular-src/src/app/services/admin-func.service.ts" />
         <option value="$PROJECT_DIR$/angular-src/src/app/app.module.ts" />
-        <option value="$PROJECT_DIR$/angular-src/src/app/services/auth.service.ts" />
         <option value="$PROJECT_DIR$/angular-src/.angular-cli.json" />
         <option value="$PROJECT_DIR$/angular-src/src/app/component/navbar/navbar.component.html" />
         <option value="$PROJECT_DIR$/angular-src/src/app/component/login/login.component.css" />
@@ -229,20 +253,22 @@
         <option value="$PROJECT_DIR$/angular-src/src/app/component/strategy/strategy.component.css" />
         <option value="$PROJECT_DIR$/angular-src/src/app/component/strategy/strategy.component.html" />
         <option value="$PROJECT_DIR$/angular-src/src/app/component/project-manager/project-manager.component.html" />
-        <option value="$PROJECT_DIR$/angular-src/src/app/services/creator.service.ts" />
         <option value="$PROJECT_DIR$/angular-src/src/app/component/strategy-manager/strategy-manager.component.html" />
         <option value="$PROJECT_DIR$/routes/projects.js" />
         <option value="$PROJECT_DIR$/routes/users.js" />
         <option value="$PROJECT_DIR$/models/user.js" />
         <option value="$PROJECT_DIR$/app.js" />
         <option value="$PROJECT_DIR$/config/database.js" />
-        <option value="$PROJECT_DIR$/routes/strategies.js" />
         <option value="$PROJECT_DIR$/angular-src/src/app/component/mm-creation/mm-creation.component.ts" />
         <option value="$PROJECT_DIR$/models/project.js" />
-        <option value="$PROJECT_DIR$/models/strategy.js" />
-        <option value="$PROJECT_DIR$/angular-src/src/app/component/profile/profile.component.ts" />
         <option value="$PROJECT_DIR$/angular-src/src/app/component/project-manager/project-manager.component.ts" />
         <option value="$PROJECT_DIR$/angular-src/src/app/component/strategy-manager/strategy-manager.component.ts" />
+        <option value="$PROJECT_DIR$/angular-src/src/app/services/creator.service.ts" />
+        <option value="$PROJECT_DIR$/angular-src/src/app/services/admin-func.service.ts" />
+        <option value="$PROJECT_DIR$/angular-src/src/app/services/auth.service.ts" />
+        <option value="$PROJECT_DIR$/angular-src/src/app/component/profile/profile.component.ts" />
+        <option value="$PROJECT_DIR$/models/strategy.js" />
+        <option value="$PROJECT_DIR$/routes/strategies.js" />
       </list>
     </option>
   </component>
@@ -627,15 +653,16 @@
       <workItem from="1513443682900" duration="14775000" />
       <workItem from="1513533816365" duration="6071000" />
       <workItem from="1513588068529" duration="868000" />
-      <workItem from="1513611031551" duration="10599000" />
+      <workItem from="1513611031551" duration="15431000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="248509000" />
+    <option name="totallyTimeSpent" value="253341000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
+    <editor active="true" />
     <layout>
       <window_info id="TypeScript" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.22541603" sideWeight="0.4942717" order="0" side_tool="false" content_ui="combo" />
@@ -646,7 +673,7 @@
       <window_info id="npm" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25718608" sideWeight="0.5057283" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24962178" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3289689" sideWeight="0.49394855" order="10" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3289689" sideWeight="0.49394855" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25718608" sideWeight="0.5057283" order="3" side_tool="true" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
@@ -666,25 +693,11 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="28" />
+      <option name="time" value="31" />
     </breakpoint-manager>
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/angular-src/src/app/app.component.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="17">
-          <caret line="1" column="0" lean-forward="false" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/angular-src/src/app/app.module.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="220">
-          <caret line="33" column="61" lean-forward="true" selection-start-line="33" selection-start-column="61" selection-end-line="33" selection-end-column="61" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/angular-src/src/app/component/strategy/strategy.component.spec.ts">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -692,24 +705,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/angular-src/src/app/services/validate.service.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="340">
-          <caret line="21" column="0" lean-forward="false" selection-start-line="21" selection-start-column="0" selection-end-line="21" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/angular-src/.gitignore">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/angular-src/src/app/services/auth.service.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="289">
-          <caret line="20" column="20" lean-forward="false" selection-start-line="20" selection-start-column="4" selection-end-line="20" selection-end-column="20" />
         </state>
       </provider>
     </entry>
@@ -724,13 +723,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="306">
           <caret line="18" column="18" lean-forward="false" selection-start-line="18" selection-start-column="18" selection-end-line="18" selection-end-column="18" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/angular-src/src/app/services/admin-func.service.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="9" column="0" lean-forward="false" selection-start-line="9" selection-start-column="0" selection-end-line="9" selection-end-column="0" />
         </state>
       </provider>
     </entry>
@@ -868,16 +860,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/angular-src/src/app/services/creator.service.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="238">
-          <caret line="114" column="68" lean-forward="false" selection-start-line="114" selection-start-column="42" selection-end-line="114" selection-end-column="68" />
-          <folding>
-            <element signature="e#0#41#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/models/user.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -889,19 +871,6 @@
             <element signature="e#811#1033#0" expanded="false" />
             <element signature="e#1112#1251#0" expanded="false" />
             <element signature="e#1309#1605#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/routes/projects.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <element signature="e#291#963#0" expanded="false" />
-            <element signature="e#1029#1355#0" expanded="false" />
-            <element signature="e#1415#1741#0" expanded="false" />
-            <element signature="e#1800#2243#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -956,22 +925,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/routes/strategies.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <element signature="e#312#1154#0" expanded="false" />
-            <element signature="e#1219#1545#0" expanded="false" />
-            <element signature="e#1613#1951#0" expanded="false" />
-            <element signature="e#2010#2945#0" expanded="false" />
-            <element signature="e#3003#3290#0" expanded="false" />
-            <element signature="e#3349#3790#0" expanded="false" />
-            <element signature="e#4670#5066#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/angular-src/src/app/component/home/home.component.ts">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -985,7 +938,7 @@
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="e#0#50#0" expanded="true" />
+            <element signature="e#0#50#0" expanded="false" />
             <element signature="n#!!block;n#ngOnInit#0;n#AdminPageComponent#0" expanded="false" />
           </folding>
         </state>
@@ -996,7 +949,7 @@
         <state relative-caret-position="-137">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="e#0#48#0" expanded="true" />
+            <element signature="e#0#48#0" expanded="false" />
             <element signature="n#!!block;n#onMMCreation#0;n#MmCreationComponent#0" expanded="false" />
           </folding>
         </state>
@@ -1007,40 +960,8 @@
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="e#0#50#0" expanded="true" />
+            <element signature="e#0#50#0" expanded="false" />
             <element signature="n#!!block;n#onLogoutClick#0;n#NavbarComponent#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/models/project.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="65" column="60" lean-forward="false" selection-start-line="65" selection-start-column="60" selection-end-line="65" selection-end-column="60" />
-          <folding>
-            <element signature="e#241#853#0" expanded="false" />
-            <element signature="e#995#1313#0" expanded="false" />
-            <element signature="e#1376#1410#0" expanded="false" />
-            <element signature="e#1473#1783#0" expanded="false" />
-            <element signature="e#1852#2252#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/models/strategy.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="323">
-          <caret line="102" column="62" lean-forward="false" selection-start-line="102" selection-start-column="62" selection-end-line="102" selection-end-column="62" />
-          <folding>
-            <element signature="e#242#1106#0" expanded="false" />
-            <element signature="e#1252#1572#0" expanded="false" />
-            <element signature="e#1644#1970#0" expanded="false" />
-            <element signature="e#2030#2070#0" expanded="false" />
-            <element signature="e#2135#2422#0" expanded="false" />
-            <element signature="e#2487#2800#0" expanded="false" />
-            <element signature="e#2870#3273#0" expanded="false" />
-            <element signature="e#3345#3752#0" expanded="false" />
-            <element signature="e#3813#4186#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1058,30 +979,8 @@
         <state relative-caret-position="394">
           <caret line="29" column="62" lean-forward="false" selection-start-line="29" selection-start-column="62" selection-end-line="29" selection-end-column="62" />
           <folding>
-            <element signature="e#0#50#0" expanded="true" />
+            <element signature="e#0#50#0" expanded="false" />
             <element signature="e#758#1171#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/angular-src/src/app/component/profile/profile.component.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-494">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <element signature="e#0#48#0" expanded="true" />
-            <element signature="n#!!block;n#ngOnInit#0;n#ProfileComponent#0" expanded="false" />
-            <element signature="n#!!block;n#getProjects#0;n#ProfileComponent#0" expanded="false" />
-            <element signature="n#!!block;n#getStrategies#0;n#ProfileComponent#0" expanded="false" />
-            <element signature="n#!!block;n#projectInfo#0;n#ProfileComponent#0" expanded="false" />
-            <element signature="n#!!block;n#strategyInfo#0;n#ProfileComponent#0" expanded="false" />
-            <element signature="n#!!block;n#deleteProject#0;n#ProfileComponent#0" expanded="false" />
-            <element signature="n#!!block;n#deleteStrategy#0;n#ProfileComponent#0" expanded="false" />
-            <element signature="n#!!block;n#getStatus#0;n#ProfileComponent#0" expanded="false" />
-            <element signature="n#!!block;n#getDate#0;n#ProfileComponent#0" expanded="false" />
-            <element signature="n#!!block;n#getDateForProgress#0;n#ProfileComponent#0" expanded="false" />
-            <element signature="n#!!block;n#createDummyProgress#0;n#ProfileComponent#0" expanded="false" />
-            <element signature="n#!!block;n#dummyProgressFunc#0;n#ProfileComponent#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1091,7 +990,7 @@
         <state relative-caret-position="178">
           <caret line="13" column="34" lean-forward="false" selection-start-line="13" selection-start-column="33" selection-end-line="13" selection-end-column="34" />
           <folding>
-            <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#!!top" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1101,7 +1000,7 @@
         <state relative-caret-position="343">
           <caret line="58" column="41" lean-forward="false" selection-start-line="58" selection-start-column="41" selection-end-line="58" selection-end-column="41" />
           <folding>
-            <element signature="e#0#48#0" expanded="true" />
+            <element signature="e#0#48#0" expanded="false" />
             <element signature="n#!!block;n#getStatusProject#0;n#ProjectManagerComponent#0" expanded="false" />
             <element signature="n#!!block;n#getStatusStrategy#0;n#ProjectManagerComponent#0" expanded="false" />
             <element signature="n#!!block;n#getDate#0;n#ProjectManagerComponent#0" expanded="false" />
@@ -1138,28 +1037,202 @@
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#h4#0;n#div#1;n#div#0;n#div#0;n#!!top" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/angular-src/src/app/component/strategy/strategy.component.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="15" column="29" lean-forward="true" selection-start-line="15" selection-start-column="29" selection-end-line="15" selection-end-column="29" />
-          <folding>
-            <element signature="e#0#48#0" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#h4#0;n#div#1;n#div#0;n#div#0;n#!!top" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/angular-src/src/app/component/strategy/strategy.component.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="323">
-          <caret line="19" column="56" lean-forward="true" selection-start-line="19" selection-start-column="56" selection-end-line="19" selection-end-column="56" />
+        <state relative-caret-position="187">
+          <caret line="11" column="20" lean-forward="false" selection-start-line="11" selection-start-column="20" selection-end-line="11" selection-end-column="20" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/angular-src/src/app/component/strategy/strategy.component.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="272">
+          <caret line="16" column="20" lean-forward="true" selection-start-line="16" selection-start-column="20" selection-end-line="16" selection-end-column="20" />
+          <folding>
+            <element signature="e#0#48#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/angular-src/src/app/services/validate.service.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <element signature="e#0#43#0" expanded="true" />
+            <element signature="n#!!block;n#validateRegister#0;n#ValidateService#0" expanded="false" />
+            <element signature="n#!!block;n#validateEmail#0;n#ValidateService#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/angular-src/src/app/services/creator.service.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <element signature="e#0#41#0" expanded="true" />
+            <element signature="n#!!block;n#sendProjectData#0;n#CreatorService#0" expanded="false" />
+            <element signature="n#!!block;n#getProjectDataAndSetStrategy#0;n#CreatorService#0" expanded="false" />
+            <element signature="n#!!block;n#getProject#0;n#CreatorService#0" expanded="false" />
+            <element signature="n#!!block;n#saveStrategy#0;n#CreatorService#0" expanded="false" />
+            <element signature="n#!!block;n#saveProject#0;n#CreatorService#0" expanded="false" />
+            <element signature="n#!!block;n#getProjectsByUser#0;n#CreatorService#0" expanded="false" />
+            <element signature="n#!!block;n#getStrategyByProject#0;n#CreatorService#0" expanded="false" />
+            <element signature="n#!!block;n#getStrategyByUser#0;n#CreatorService#0" expanded="false" />
+            <element signature="n#!!block;n#deleteProject#0;n#CreatorService#0" expanded="false" />
+            <element signature="n#!!block;n#deleteStrategy#0;n#CreatorService#0" expanded="false" />
+            <element signature="n#!!block;n#changeProjectStatus#0;n#CreatorService#0" expanded="false" />
+            <element signature="n#!!block;n#changeStrategyStatus#0;n#CreatorService#0" expanded="false" />
+            <element signature="n#!!block;n#changeStrategyStatusAndSetProgress#0;n#CreatorService#0" expanded="false" />
+            <element signature="n#!!block;n#strategyProgressUpdate#0;n#CreatorService#0" expanded="false" />
+            <element signature="n#!!block;n#sendProjectInfo#0;n#CreatorService#0" expanded="false" />
+            <element signature="n#!!block;n#sendStrategyInfo#0;n#CreatorService#0" expanded="false" />
+            <element signature="n#!!block;n#getProjectInfo#0;n#CreatorService#0" expanded="false" />
+            <element signature="n#!!block;n#getStrategyInfo#0;n#CreatorService#0" expanded="false" />
+            <element signature="n#!!block;n#getDate#0;n#CreatorService#0" expanded="false" />
+            <element signature="n#!!block;n#getDateForProgress#0;n#CreatorService#0" expanded="false" />
+            <element signature="n#!!block;n#getStatus#0;n#CreatorService#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/angular-src/src/app/services/admin-func.service.spec.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <element signature="e#0#56#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/angular-src/src/app/services/admin-func.service.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="187">
+          <caret line="11" column="0" lean-forward="false" selection-start-line="11" selection-start-column="0" selection-end-line="11" selection-end-column="0" />
+          <folding>
+            <element signature="e#0#41#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/angular-src/src/app/guards/auth.guard.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <element signature="e#0#41#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/angular-src/src/app/services/auth.service.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="187">
+          <caret line="11" column="0" lean-forward="false" selection-start-line="11" selection-start-column="0" selection-end-line="11" selection-end-column="0" />
+          <folding>
+            <element signature="e#0#43#0" expanded="true" />
+            <element signature="n#!!block;n#registerUser#0;n#AuthService#0" expanded="false" />
+            <element signature="n#!!block;n#authenticateUser#0;n#AuthService#0" expanded="false" />
+            <element signature="n#!!block;n#storeUserData#0;n#AuthService#0" expanded="false" />
+            <element signature="n#!!block;n#logout#0;n#AuthService#0" expanded="false" />
+            <element signature="n#!!block;n#getProfile#0;n#AuthService#0" expanded="false" />
+            <element signature="n#!!block;n#loadToken#0;n#AuthService#0" expanded="false" />
+            <element signature="n#!!block;n#loggedIn#0;n#AuthService#0" expanded="false" />
+            <element signature="n#!!block;n#getCurrentUser#0;n#AuthService#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/angular-src/src/app/component/profile/profile.component.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-120">
+          <caret line="22" column="34" lean-forward="false" selection-start-line="22" selection-start-column="34" selection-end-line="22" selection-end-column="34" />
+          <folding>
+            <element signature="e#0#48#0" expanded="true" />
+            <element signature="n#!!block;n#ngOnInit#0;n#ProfileComponent#0" expanded="false" />
+            <element signature="n#!!block;n#getProjects#0;n#ProfileComponent#0" expanded="false" />
+            <element signature="n#!!block;n#getStrategies#0;n#ProfileComponent#0" expanded="false" />
+            <element signature="n#!!block;n#projectInfo#0;n#ProfileComponent#0" expanded="false" />
+            <element signature="n#!!block;n#strategyInfo#0;n#ProfileComponent#0" expanded="false" />
+            <element signature="n#!!block;n#deleteProject#0;n#ProfileComponent#0" expanded="false" />
+            <element signature="n#!!block;n#deleteStrategy#0;n#ProfileComponent#0" expanded="false" />
+            <element signature="n#!!block;n#getStatus#0;n#ProfileComponent#0" expanded="false" />
+            <element signature="n#!!block;n#getDate#0;n#ProfileComponent#0" expanded="false" />
+            <element signature="n#!!block;n#getDateForProgress#0;n#ProfileComponent#0" expanded="false" />
+            <element signature="n#!!block;n#createDummyProgress#0;n#ProfileComponent#0" expanded="false" />
+            <element signature="n#!!block;n#dummyProgressFunc#0;n#ProfileComponent#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/models/project.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <element signature="e#241#853#0" expanded="false" />
+            <element signature="e#995#1313#0" expanded="false" />
+            <element signature="e#1376#1410#0" expanded="false" />
+            <element signature="e#1473#1783#0" expanded="false" />
+            <element signature="e#1852#2252#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/models/strategy.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <element signature="e#242#1106#0" expanded="false" />
+            <element signature="e#1252#1572#0" expanded="false" />
+            <element signature="e#1644#1970#0" expanded="false" />
+            <element signature="e#2030#2207#0" expanded="false" />
+            <element signature="e#2272#2559#0" expanded="false" />
+            <element signature="e#2624#2937#0" expanded="false" />
+            <element signature="e#3007#3410#0" expanded="false" />
+            <element signature="e#3482#3889#0" expanded="false" />
+            <element signature="e#3950#4323#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/routes/projects.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <element signature="e#291#963#0" expanded="false" />
+            <element signature="e#1029#1355#0" expanded="false" />
+            <element signature="e#1415#1741#0" expanded="false" />
+            <element signature="e#1800#2243#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/routes/strategies.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="373">
+          <caret line="138" column="11" lean-forward="true" selection-start-line="138" selection-start-column="11" selection-end-line="138" selection-end-column="11" />
+          <folding>
+            <element signature="e#317#1184#0" expanded="false" />
+            <element signature="e#1252#1588#0" expanded="false" />
+            <element signature="e#1659#2007#0" expanded="false" />
+            <element signature="e#2069#3029#0" expanded="false" />
+            <element signature="e#3090#3389#0" expanded="false" />
+            <element signature="e#3448#3890#0" expanded="false" />
+            <element signature="e#4915#5313#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>

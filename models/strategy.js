@@ -88,6 +88,10 @@ module.exports.getStrategyByProjectId = function (project, callback) {
 
 module.exports.getStrategyById = function (id, callback) {
     Strategy.findById(id, callback);
+    // Strategy.findById(id,function (err,result) {
+    //     if(err) throw new Error(err);
+    //     callback(null,result);
+    // })
 };
 
 module.exports.addStrategy = function (newStrategy, callback) {

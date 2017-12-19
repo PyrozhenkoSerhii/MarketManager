@@ -13,7 +13,6 @@ export class CreatorService {
     constructor(private http: Http) {
     }
 
-
     //Transfer data
     sendProjectData(project) {
         this.project = project;
@@ -27,7 +26,6 @@ export class CreatorService {
     getProject() {
         return this.project;
     }
-
 
     //Creators
     saveStrategy(strategy) {
@@ -44,7 +42,6 @@ export class CreatorService {
         //.subscribe(projects => {this.project = project});
             .map(res => res.json());
     }
-
 
     //Getters
     getProjectsByUser() {
@@ -71,7 +68,6 @@ export class CreatorService {
             .map(res => res.json());
     }
 
-
     //Delete
     deleteProject(project) {
         let headers = new Headers();
@@ -89,7 +85,7 @@ export class CreatorService {
             .map(res => res.json());
     }
 
-
+    //Changers
     changeProjectStatus(project, status) {
         let headers = new Headers();
         let projectChanger = {"project": project, "changeTo": !status};
@@ -97,7 +93,6 @@ export class CreatorService {
         return this.http.post('projects/changeStatus', projectChanger, {headers: headers})
             .map(res => res.json());
     }
-
 
     changeStrategyStatus(strategy, status) {
         let headers = new Headers();
@@ -107,8 +102,7 @@ export class CreatorService {
             .map(res => res.json());
     }
 
-
-    changeStrategyStatusAndSetProgress(strategy, status){
+    changeStrategyStatusAndSetProgress(strategy, status) {
         let headers = new Headers();
         let strategyChanger = {"strategy": strategy, "changeTo": !status};
         headers.append('Content-Type', 'application/json');
@@ -116,7 +110,15 @@ export class CreatorService {
             .map(res => res.json());
     }
 
-    //Manager
+    strategyProgressUpdate(strategy, progress) {
+        let headers = new Headers();
+        let strategyChanger = {"strategy": strategy, "progress": progress};
+        headers.append('Content-Type', 'application/json');
+        return this.http.post('strategies/changeProgress', strategyChanger, {headers: headers})
+            .map(res => res.json());
+    }
+
+    //Managers
     sendProjectInfo(project) {
         this.project = project;
     }
@@ -137,7 +139,7 @@ export class CreatorService {
         return moment(date).format("DD/MM/YYYY HH:mm:ss");
     }
 
-    getDateForProgress(date){
+    getDateForProgress(date) {
         return moment(date).format("DD/MM HH:mm");
     }
 
@@ -148,13 +150,7 @@ export class CreatorService {
         return "disabled";
     }
 
-    strategyProgressUpdate(strategy,progress) {
-        let headers = new Headers();
-        let strategyChanger = {"strategy": strategy, "progress": progress};
-        headers.append('Content-Type', 'application/json');
-        return this.http.post('strategies/changeProgress', strategyChanger, {headers: headers})
-            .map(res => res.json());
-    }
+
 
 
 }
