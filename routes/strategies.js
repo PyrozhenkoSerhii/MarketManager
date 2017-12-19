@@ -133,12 +133,13 @@ router.post('/changeStatusAndSetStrategy', function (req, res, next) {
         var schedule = require('node-schedule');
         // var rule = new schedule.RecurrenceRule();
         // rule.minute = 42;
+        var j = new schedule;
 
-        var j = schedule.scheduleJob('*/1 * * * *', function(){
-            console.log('The answer to life, the universe, and everything!');
+        j = schedule.scheduleJob('*/1 * * * *', function(){
+            console.log('Right the process to '+req.body.strategy.name);
         });
 
-
+        //j.cancelJob();
 
 
         // Strategy.getStrategyById(strategyId, function (err, strategy) {
