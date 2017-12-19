@@ -130,11 +130,9 @@ router.post('/changeStatusAndSetProgress', function (req, res, next) {
         if (err) {
             res.json({success: false, msg: 'Failed to change the status of the strategy'})
         }
-        writeProgress(req.body.strategy);
-        writeCompletedTime(req.body.strategy);
 
         var schedule = require('node-schedule');
-        var j = schedule.scheduleJob('* */1 * * *', function () {
+        var j = schedule.scheduleJob('0 */1 * * *', function () {
             Strategy.getStrategyById(strategyId, function (err, strategy) {
                 if (err) {
                     return new Error(err);
