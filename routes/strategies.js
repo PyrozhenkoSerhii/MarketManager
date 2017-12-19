@@ -130,9 +130,9 @@ router.post('/changeStatusAndSetStrategy', function (req, res, next) {
         if (err) {
             res.json({success: false, msg: 'Failed to change the status of the strategy'})
         }
-        var cron = require('node-schedule');
-        var rule = new schedule.RecurrenceRule();
-        rule.minute = 42;
+        var schedule = require('node-schedule');
+        // var rule = new schedule.RecurrenceRule();
+        // rule.minute = 42;
 
         var j = schedule.scheduleJob('*/1 * * * *', function(){
             console.log('The answer to life, the universe, and everything!');
